@@ -190,4 +190,18 @@ public class SoundManager : MonoBehaviour
 
         return null;
     }
+    
+    //외부에서 소리 On/Off기능, 0, 1
+    public void ToggleMasterSound(float value)
+    {                   // -80 ~ 20
+        MasterVolume = -80 + (value * 100);
+    }
+    public void ToggleBGMSound(float value)
+    {
+        BGMVolume = -80 + (value * 100);
+    }
+    public void ToggleEffectSound(float value)
+    {
+        EffectVolume = -80 + (value * 100);
+    }
 }
