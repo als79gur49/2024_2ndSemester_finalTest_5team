@@ -9,9 +9,9 @@ public class ScriptPanel : MonoBehaviour
     private int stageLevel; //스테이지 레벨 ex) 1, 2, 3, 4, 5
 
     [SerializeField]
-    private StarsController starController;
+    private TextMeshProUGUI textName;
     [SerializeField]
-    private TextMeshProUGUI text;
+    private TextMeshProUGUI textDetail;
     [SerializeField]
     private SceneLoader startButtonSceneLoader;
 
@@ -19,9 +19,8 @@ public class ScriptPanel : MonoBehaviour
     {
         StageInfo currentStageInfo = DataManager.Instance.PlayerData.stageInfos[stageLevel];
         
-        starController.AchievedStars = currentStageInfo.achievedStars;
-        Debug.Log("ScriptPanel Awake Achieved");
         startButtonSceneLoader.SceneToLoad = currentStageInfo.stageName;
-        text.text = currentStageInfo.stageName + "\n" + currentStageInfo.storyDetails;
+        textName.text = currentStageInfo.stageName;
+        textDetail.text = currentStageInfo.storyDetails;
     }
 }

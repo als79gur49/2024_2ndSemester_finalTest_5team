@@ -24,7 +24,6 @@ public class StarsController : MonoBehaviour
             stars[i].GetComponent<StarInfo>().DeactiveMain();
         }
 
-        Debug.Log("StarsController Awake Achieved");
         for (int i = 0; i < AchievedStars; i++) //È¹µæµÈ º°¸¸Å­ º° »ý¼º
         {
             stars[i]?.GetComponent<StarInfo>().ActiveMain();
