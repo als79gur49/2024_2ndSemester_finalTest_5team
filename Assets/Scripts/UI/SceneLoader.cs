@@ -5,9 +5,10 @@ public class SceneLoader : MonoBehaviour
 {
     //씬 이름을 통해서 로드
     [SerializeField]
-    private string sceneToLoad;
+    private string sceneToLoad; //직접 인스펙터에서 입력
     
-    public string SceneToLoad { get=>sceneToLoad; set=>sceneToLoad = value; }
+    //외부or 부모에서 따로 지정
+    public string SceneToLoad { get=>sceneToLoad; set=>sceneToLoad = value; } 
 
     public void LoadSceneByName()
     {

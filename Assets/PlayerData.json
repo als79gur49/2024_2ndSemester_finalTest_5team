@@ -1,1 +1,47 @@
-{"stageLevel":1,"maxStageLevel":5,"stageInfos":[{"achievedStars":0,"stageName":"Stage00","storyDetails":"인덱스0은 사용x"},{"achievedStars":2,"stageName":"Stage01","storyDetails":"스테이지1에 대한 세부 설명"},{"achievedStars":1,"stageName":"Stage02","storyDetails":"스테이지 2에 대한 세부 설명임"},{"achievedStars":0,"stageName":"Stage03","storyDetails":"입력되지 않음"},{"achievedStars":0,"stageName":"Stage04","storyDetails":"입력되지 않음"},{"achievedStars":0,"stageName":"Stage05","storyDetails":"입력되지 않음"}],"settings":{"masterVolume":3,"bgmVolume":0,"effectVolume":0}}
+{
+	"maxStageLevel": 5,
+	"settings": {
+		"masterVolume": 0,
+		"bgmVolume": -1,
+		"effectVolume": 1
+	},
+	"stageInfos": [
+		{
+			"achievedStars": 0,
+            "sceneName": "Stage0",
+			"stageName": "이름 없음",
+			"storyDetails": "인덱스0은 사용x"
+		},
+		{
+			"achievedStars": 2,
+            "sceneName": "Stage1",
+			"stageName": "슬라임 마을",
+			"storyDetails": "스테이지1에 대한 세부 설명"
+		},
+		{
+			"achievedStars": 1,
+            "sceneName": "Stage2",
+			"stageName": "슬라임 귀족 구역",
+			"storyDetails": "스테이지 2에 대한 세부 설명임"
+		},
+		{
+			"achievedStars": 0,
+            "sceneName": "Stage3",
+			"stageName": "슬라임 왕국의 성문",
+			"storyDetails": "스테이지 3에 대한 세부 설명이다"
+		},
+		{
+			"achievedStars": 0,
+            "sceneName": "Stage4",
+			"stageName": "이름 없음",
+			"storyDetails": "입력되지 않음"
+		},
+		{
+			"achievedStars": 0,
+            "sceneName": "Stage5",
+			"stageName": "이름없음",
+			"storyDetails": "입력되지 않음"
+		}
+	],
+	"stageLevel": 1
+}

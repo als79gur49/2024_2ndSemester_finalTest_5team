@@ -15,11 +15,11 @@ public class ScriptPanel : MonoBehaviour
     [SerializeField]
     private SceneLoader startButtonSceneLoader;
 
-    private void Awake()
+     private void Awake()
     {
         StageInfo currentStageInfo = DataManager.Instance.PlayerData.stageInfos[stageLevel];
         
-        startButtonSceneLoader.SceneToLoad = currentStageInfo.stageName;
+        startButtonSceneLoader.SceneToLoad = currentStageInfo.sceneName;
         textName.text = currentStageInfo.stageName;
         textDetail.text = currentStageInfo.storyDetails;
     }

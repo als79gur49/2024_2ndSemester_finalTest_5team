@@ -18,7 +18,7 @@ public class PlayerData
         for(int i = 0; i <  stageInfos.Length; i++)
         {
             stageInfos[i] = new StageInfo();
-            stageInfos[i].Init(0, $"Stage0{i}", "입력되지 않음");
+            stageInfos[i].Init(0, $"Stage{i}", "이름 없음","입력되지 않음");
         }
 
         settings = new Settings();
@@ -45,12 +45,15 @@ public class Settings
 public class StageInfo
 {               
     public int achievedStars; //획득한 별 개수 0 ~ 3
+    public string sceneName;
+
     public string stageName; //스테이지 이름
     public string storyDetails; //스테이지 스토리 내용
 
-    public void Init(int _achievedStars, string _stageName, string _storyDetails)
+    public void Init(int _achievedStars, string _sceneName, string _stageName, string _storyDetails)
     {
         achievedStars = _achievedStars;
+        sceneName = _sceneName;
         stageName = _stageName;
         storyDetails = _storyDetails;
     }

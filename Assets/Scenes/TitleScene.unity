@@ -1951,7 +1951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5712960569609338630, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
       propertyPath: currentBGMVolume
-      value: -54.8
+      value: -12.4
       objectReference: {fileID: 0}
     - target: {fileID: 5896415566564639524, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
       propertyPath: m_IsActive
@@ -1960,6 +1960,10 @@ PrefabInstance:
     - target: {fileID: 7536266448773801332, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833568741373740037, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
