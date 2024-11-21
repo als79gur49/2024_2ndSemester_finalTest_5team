@@ -1,0 +1,21 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+public class StagePanel : MonoBehaviour
+{
+    [SerializeField]
+    private int stageLevel; //스테이지 레벨 ex) 1, 2, 3, 4, 5
+
+    [SerializeField]
+    private StarsController starController;
+    [SerializeField]
+    private TextMeshProUGUI text;
+
+    private void Awake()
+    {
+        StageInfo currentStageInfo = DataManager.Instance.PlayerData.stageInfos[stageLevel];
+        
+        starController.AchievedStars = currentStageInfo.achievedStars;
+        text.text = currentStageInfo.stageName;
+    }
+}

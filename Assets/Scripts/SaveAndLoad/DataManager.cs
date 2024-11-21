@@ -25,8 +25,14 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public PlayerData playerData;
+    private PlayerData playerData;
     private string dataPath;
+
+    public PlayerData PlayerData
+    {
+        get { return playerData; }
+        set { playerData = value; }
+    }
 
     private void Awake() //╫л╠шео фпео
     {

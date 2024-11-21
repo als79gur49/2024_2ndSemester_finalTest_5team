@@ -7,6 +7,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     private string sceneToLoad;
     
+    public string SceneToLoad { get=>sceneToLoad; set=>sceneToLoad = value; }
+
     public void LoadSceneByName()
     {
         //TODO: 찾지 못했을 경우 로그 띄우기
