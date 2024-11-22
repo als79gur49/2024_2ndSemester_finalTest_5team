@@ -44,9 +44,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4022d87d38f7984bae3fbed3d6b97fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
-    stageLevel: 1
-    settings:
-      masterVolume: 0
-      bgmVolume: 3
-      effectVolume: 4
