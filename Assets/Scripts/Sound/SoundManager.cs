@@ -18,8 +18,10 @@ public class SoundManager : MonoBehaviour
     private AudioMixer audioMixer; 
     [SerializeField] 
     private GameObject bgmPlayer;
+    public GameObject BGMPlayer => bgmPlayer;
     [SerializeField]
     private GameObject effectPlayer;
+    public GameObject EffectPlayer => effectPlayer;
 
     #region 볼륨 수정하는 변수들 
     //TODO: 볼륨의 크기가 선형이 아니라 로그 스케일인 것 같음. 변환이 필요
