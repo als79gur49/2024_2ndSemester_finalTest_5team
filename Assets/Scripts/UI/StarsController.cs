@@ -1,32 +1,39 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class StarsController : MonoBehaviour
 {
-    private int atLeastStar = 3;//최소 별 개수 및 별 배경 개수
-    public int AchievedStars { get; set; }
-    //최대 별의 개수를 조절하기 위해 스크립트 이용
     [SerializeField]
-    private GameObject starPrefab;
-    private List<GameObject> stars;
+    private List<GameObject> stars; // 별의 위치 1, 2, 3일 경우 3, 1, 2순으로 가장 먼저 활성화 될 별부터 list에 넣기
 
+    public int AchievedStars {  get; set; }
 
-    //ScriptPanel, StagePanel스크립트에서 Awake에서 AchievedStars를 초기화 하는데, Awake() 호출 순서 때문에
-    //StarsController를 Start에서 실행시킴
     private void Start()
     {
-        stars = new List<GameObject>();
+        int activedStars = 0;
 
-        for (int i = 0; i < atLeastStar; i++) //별의 배경만 생성
+        foreach(GameObject star in stars)
         {
-            stars.Add(Instantiate(starPrefab));
-            stars[i].transform.SetParent(this.transform, false);
-            stars[i].GetComponent<StarInfo>().DeactiveMain();
-        }
+            if(star.TryGetComponent<StarInfo>(out StarInfo starComponent))
+            {
+                if(activedStars < AchievedStars)
+                {
+                    starComponent.ActiveMain();
+                    starComponent.ActiveBackground();
 
-        for (int i = 0; i < AchievedStars; i++) //획득된 별만큼 별 생성
-        {
-            stars[i]?.GetComponent<StarInfo>().ActiveMain();
+                    activedStars++;
+                }
+                else
+                {
+                    starComponent.DeactiveMain();
+                    starComponent.ActiveBackground();
+                }
+            }
+            else
+            {
+                continue;
+            }
         }
     }
 
