@@ -11,7 +11,6 @@ public class StarsController : MonoBehaviour
 
     private bool isActivated;
     private int achievedStars;
-    public int AchievedStars {  get; set; }
 
     private void Awake()
     {

@@ -29,7 +29,7 @@ public class StagePanel : MonoBehaviour
         {
             case StageClearState.NotCleard:
                 Color targetColor = stageImage?.color ?? Color.clear;
-                targetColor.a = 0.2f;
+                targetColor.a = 0.5f;
                 stageImage.color = targetColor;
 
                 starController.Init(false);

@@ -17,7 +17,7 @@ public class VictoryPanel : MonoBehaviour
     {
         StageInfo currentStageInfo = DataManager.Instance.PlayerData.stageInfos[stageLevel];
 
-        starController.AchievedStars = currentStageInfo.achievedStars;
+        starController.Init(true, currentStageInfo.achievedStars);
         retryButtonSceneLoader.SceneToLoad = currentStageInfo.sceneName;   
     }
 }
