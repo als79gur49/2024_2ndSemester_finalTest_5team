@@ -3,12 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PopupMessage : MonoBehaviour
 {   
-    //
-    //싱글턴like DontDestroyOnLoad를 사용하지 않음
-    //씬별로 여러개의 캔버스 중 원하는 캔버스에 그리기 위해 <- 방법을 못 찾겠음
+    //targetCanvas의 경우 onSceneLoad를 통해서 TargetCanvas라는 Tag를 Find
 
     //에러 or 획득 등 팝업 text 띄우는 용도
     //텍스트 창이 생기고 특정 방향으로 이동하다 시간이 지나면 삭제되는 텍스트
@@ -81,4 +80,23 @@ public class PopupMessage : MonoBehaviour
 
         Destroy(rectTransform.gameObject);
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(targetCanvas == null)
+        {
+            targetCanvas = GameObject.FindGameObjectWithTag("TargetCanvas");
+        }
+    }
+
 }

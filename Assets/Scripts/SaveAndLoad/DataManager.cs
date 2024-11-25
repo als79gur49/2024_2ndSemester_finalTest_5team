@@ -52,21 +52,18 @@ public class DataManager : MonoBehaviour
         LoadData();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A)) 
-        {
-            SaveData();
-        }
-    }
-
     public void LoadData()
     {
         if(File.Exists(dataPath))
         {   //FileStream과 달리 자동으로 Close()를 해주기에 편함
             string json = File.ReadAllText(dataPath); //파일 읽어오기
+
+            playerData = new PlayerData();
+
             playerData = JsonUtility.FromJson<PlayerData>(json); //읽어온 파일을 객체에 맞게 변환
-            Debug.Log($"{playerData}의 내용{json}을 {dataPath}로 부터 읽어왔습니다.");
+            //필요하면 데이터 유효성 검사하기. 최대클리어스테이지와 각 스테이지별 클리어 유무 및 별 획득 개수 등
+
+            Debug.Log(JsonUtility.ToJson(playerData));
         }
         else
         {

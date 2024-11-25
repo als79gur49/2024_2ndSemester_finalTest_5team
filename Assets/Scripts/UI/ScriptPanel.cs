@@ -12,6 +12,7 @@ public class ScriptPanel : MonoBehaviour
     private TextMeshProUGUI textName;
     [SerializeField]
     private TextMeshProUGUI textDetail;
+
     [SerializeField]
     private SceneLoader startButtonSceneLoader;
 
