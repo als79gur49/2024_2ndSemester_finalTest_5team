@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingPanel : AbstractBlockerEvent
+public class SettingPanel : MonoBehaviour
 {
     [SerializeField]
     private Slider BGMSlider;
