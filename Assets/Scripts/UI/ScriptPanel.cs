@@ -16,9 +16,6 @@ public class ScriptPanel : MonoBehaviour
     [SerializeField]
     private SceneLoader startButtonSceneLoader;
 
-    [SerializeField]
-    private GameObject UIBlocker;
-
     private void Awake()
     {
         StageInfo currentStageInfo = DataManager.Instance.PlayerData.stageInfos[stageLevel];

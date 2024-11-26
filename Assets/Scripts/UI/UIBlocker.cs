@@ -9,7 +9,7 @@ public class UIBlocker : MonoBehaviour
     /// UIBlocker는 stack의 Peek의 자식 오브젝트에 위치
     /// Peek 존재하지 않으면 끄기
     /// </summary>
-    // Start is called before the first frame update
+    /// 
     [SerializeField]
     private GameObject blocker;
     private Stack<GameObject> uiStack = new Stack<GameObject>();
@@ -34,14 +34,22 @@ public class UIBlocker : MonoBehaviour
     {
         if (blocker == null)
         {
-            blocker = this.gameObject;
+            //blocker없을 경우 새로 추가
+
+            return;
         }
 
         blocker.SetActive(uiStack.Count > 0); //열려있는 UI가 없을 경우 비활성화
 
         if(uiStack.TryPeek(out GameObject parentUI)) //제일 위의 UI의 자식으로 Blocker 배치
         {
-            transform.SetParent(parentUI.transform, true);
+            //var originParent = blocker.transform.parent;
+            //blocker.transform.SetParent(null);
+
+            //parentUI.SetActive(true);
+
+            blocker.transform.SetParent(parentUI.transform, true); //현재 위치 움직이지 않음
+            blocker.transform.SetSiblingIndex(0); //자식 인덱스 중에서 젤 위로 옮김. 다른 UI가리지 않게 하기
         }
     }
 }
