@@ -22,10 +22,10 @@ public class PlayerData
             stageInfos[i].Init(StageClearState.NotCleard, 0, $"Stage{i}", "이름 없음", "입력되지 않음");
         }
 
-        //    if (stageInfos.Length >= 2) //1스테이지 도전상태로 변경
-        //    {
-        //        stageInfos[1].stageClearState = StageClearState.InProgress;
-        //    }
+        if (stageInfos.Length >= 2) //1스테이지 도전상태로 변경
+        {
+            stageInfos[1].stageClearState = StageClearState.InProgress;
+        }
 
         settings = new Settings();
         settings.Init(0, 0, 0);
@@ -60,7 +60,7 @@ public enum StageClearState //json 파일 수정 시 주의사항, json내부에서 enum을 문
 [System.Serializable]
 public class StageInfo
 {
-    public StageClearState stageClearState;
+    public StageClearState stageClearState; // 에러, 클리어 o, 도전 중, 클리어 x
     public int achievedStars; //획득한 별 개수 0 ~ 3
     public string sceneName; //ex) Stage1, Stage2 ~ Stage10
 
