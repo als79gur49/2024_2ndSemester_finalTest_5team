@@ -37,13 +37,10 @@ public class MonsterUnitMove : MonoBehaviour
     //충돌 여부
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
-
         // Player 태그를 가진 오브젝트와 충돌하였을 때
         if (collision.CompareTag("Player"))
         {
             isAttack = true;
-
             if (Time.time > lastAttackTime + stats.attackCooldown)
             {
                 UnitStats playerStats = collision.GetComponent<UnitStats>();

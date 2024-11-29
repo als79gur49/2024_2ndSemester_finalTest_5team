@@ -162,6 +162,7 @@ MonoBehaviour:
   attackDamage: 5
   attackCooldown: 1
   attackRange: 1
+  goldCost: 10
   currentHealth: 0
 --- !u!50 &4196619253252957069
 Rigidbody2D:
