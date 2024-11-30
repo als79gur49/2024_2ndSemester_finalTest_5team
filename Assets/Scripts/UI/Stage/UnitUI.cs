@@ -29,12 +29,12 @@ public class UnitUI : MonoBehaviour
         //chracterImage
         //cooldownImage
         
-        spawnButton.onClick.AddListener(Spawn);
+        //spawnButton.onClick.AddListener(Spawn);
     }
 
     public void Spawn()
     {
-        if(isCooldownReady) //쿨다운 확인
+        if(isCooldownReady) //쿨다운 확인, 값 변경은 UpdateHUD에 붙어있음
         {
             if(true) //골드 확인
             {
