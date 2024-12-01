@@ -158,7 +158,6 @@ MonoBehaviour:
   - {fileID: 1695033054197136513, guid: d8b4b966aa0f7414ca4f13a322ac4ec1, type: 3}
   MonsterUnit:
   - {fileID: 2775250315426912360, guid: bd1cf42a6f441b84cbcbb50de3e50cf1, type: 3}
-  - {fileID: 5698258066105392177, guid: 33931745653e9ed41a60d446fb1a94f0, type: 3}
   - {fileID: 4871057617929954885, guid: c79aea93d6f0b46418cf9132ce1679ec, type: 3}
   PlayerspawnPoint: {fileID: 210110179}
   MonsterspawnPoint: {fileID: 1759775277}
@@ -359,7 +358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGold: 100
   GainGold: 10
-  spendGoldButton: []
   OnUpdateGold:
     m_PersistentCalls:
       m_Calls:

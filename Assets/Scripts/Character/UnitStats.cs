@@ -2,15 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UnitType
-{
-    Unit,
-    Enemy
-}
 [System.Serializable]
 public class UnitStats : MonoBehaviour
 {
-    public UnitType unitType; // 유닛 타입
     public int maxHealth; // 최대 체력
     public int attackDamage; // 공격력
     public float attackCooldown; // 공격 쿨타임
@@ -30,6 +24,7 @@ public class UnitStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth; // 초기 체력을 최대 체력으로 설정
+        goldSystem = FindObjectOfType<GoldSystem>();
     }
 
     public void TakeDamage(int damage)
@@ -39,16 +34,21 @@ public class UnitStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            Destroy(gameObject);
         }
 
     }
     private void Die()
     {
-        if(unitType == UnitType.Enemy)
+        if(CompareTag("Enemy"))
         {
-            // 적 유닛 사망 시 골드 지급
-           // goldSystem.AddGold(goldReward);
+            if (goldSystem != null)
+            {
+                //적 유닛 사망 시 골드 지급
+                goldSystem.AddGold(goldReward);
+                Debug.Log($"{goldSystem.currentGold}");
+            }
+
         }
+        Destroy(gameObject);
     }
 }

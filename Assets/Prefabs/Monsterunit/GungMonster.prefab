@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8653602189947410457}
   - component: {fileID: 8684005335636285415}
   - component: {fileID: 4549417023395301760}
+  - component: {fileID: -6083480783962187393}
   m_Layer: 0
   m_Name: GungMonster
   m_TagString: Enemy
@@ -113,13 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5de232cf48ff34ab80698c2bc6a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitType: 1
   maxHealth: 11
   attackDamage: 6
   attackCooldown: 1
   attackRange: 3
   goldCost: 0
-  goldReward: 200
+  goldReward: 20
   currentHealth: 0
   unitName: "\uAD81\uBCD1"
   unitImage: {fileID: 0}
@@ -196,3 +196,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6083480783962187393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2775250315426912360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2da24abfac41384db89b51d9b184d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

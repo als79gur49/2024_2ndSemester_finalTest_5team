@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8236226168968863371}
   - component: {fileID: -7580189451235957219}
   - component: {fileID: 8822945090531650057}
+  - component: {fileID: -6263228450787218301}
   m_Layer: 0
   m_Name: SwordMonster
   m_TagString: Enemy
@@ -113,13 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5de232cf48ff34ab80698c2bc6a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitType: 1
   maxHealth: 16
   attackDamage: 7
   attackCooldown: 1
   attackRange: 1
   goldCost: 0
-  goldReward: 200
+  goldReward: 20
   currentHealth: 0
   unitName: "\uAE30\uC0AC"
   unitImage: {fileID: 0}
@@ -196,3 +196,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6263228450787218301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871057617929954885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2da24abfac41384db89b51d9b184d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
