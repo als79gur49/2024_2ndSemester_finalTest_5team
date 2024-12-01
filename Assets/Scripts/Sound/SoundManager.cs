@@ -15,20 +15,27 @@ public class SoundManager : MonoBehaviour
     //bgm의 경우 일반적인 Play
     //Effect는 shot으로 주로 Play
     [SerializeField]
-    private AudioMixer audioMixer; 
+    private AudioMixer audioMixer;
+
+    [Header("사운드 플레이어")]
     [SerializeField] 
     private GameObject bgmPlayer;
+    public GameObject BGMPlayer => bgmPlayer;
     [SerializeField]
     private GameObject effectPlayer;
+    public GameObject EffectPlayer => effectPlayer;
 
+    [Header("볼륨 변수")]
     #region 볼륨 수정하는 변수들 
     //TODO: 볼륨의 크기가 선형이 아니라 로그 스케일인 것 같음. 변환이 필요
     [SerializeField]
     [Range(-80, 20)] 
     private float currentMasterVolume;
+
     [SerializeField]
     [Range(-80, 20)]
     private float currentBGMVolume;
+
     [SerializeField]
     [Range(-80, 20)]
     private float currentEffectVolume;
@@ -62,6 +69,7 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    [Header("사운드 클립")]
     [SerializeField] //Dictionary로 중복되지 않게 하려고 했는데 Dictionary는 Serialize가 되지 않아서 따로 class생성
     private List<Pair> bgmClips;
     [SerializeField]
@@ -108,6 +116,12 @@ public class SoundManager : MonoBehaviour
         instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+    }
+    private void Start()
+    {
+        MasterVolume = currentMasterVolume;
+        BGMVolume = currentBGMVolume;
+        EffectVolume = EffectVolume;
     }
 
     private bool _PlayBGMAudio(string clipName, out AudioClip audioClip,float rate = 0.0f)//클립, 시작 위치
@@ -178,7 +192,7 @@ public class SoundManager : MonoBehaviour
         return true;
     }
 
-    private AudioClip GetClip(string name, List<Pair> list)
+    private AudioClip GetClip(string name, List<Pair> list) //내부 함수, string -> 알맞은 AudioClip반환
     {
         foreach (Pair pair in list)
         {
@@ -192,16 +206,17 @@ public class SoundManager : MonoBehaviour
     }
     
     //외부에서 소리 On/Off기능, 0, 1
-    public void ToggleMasterSound(float value)
-    {                   // -80 ~ 20
-        MasterVolume = -80 + (value * 100);
+    /*public void ToggleMasterSound(float value)
+    {                   // -80 ~ 0
+        MasterVolume = -80 + (value * 80);
     }
-    public void ToggleBGMSound(float value)
+    */
+    public void ToggleBGMSound(float value)//소리의 OnOff는 AudioMixer 대신 AudioSource에서 수정
     {
-        BGMVolume = -80 + (value * 100);
+        bgmPlayer.GetComponent<AudioSource>().volume = value;
     }
     public void ToggleEffectSound(float value)
     {
-        EffectVolume = -80 + (value * 100);
+        effectPlayer.GetComponent<AudioSource>().volume = value;
     }
 }

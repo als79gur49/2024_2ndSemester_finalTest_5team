@@ -859,12 +859,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53714a2ef0d583a4aae3bc8de9cfe215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerunitPrefab: {fileID: 7618142384038927397, guid: a66d36f3038d0274296303a6a04ecd5e, type: 3}
-  MonsterunitPrefab: {fileID: 5421513962525734372, guid: fd642c3440bf6584dbc0c4b185567c7f, type: 3}
+  SpawnUnit: []
+  MonsterUnit: []
   PlayerspawnPoint: {fileID: 96746845}
   MonsterspawnPoint: {fileID: 1351163907}
-  spawnInterval: 3
-  spawnTimer: 1
+  units: []
+  spawnDelay: 2
 --- !u!4 &946272327
 Transform:
   m_ObjectHideFlags: 0

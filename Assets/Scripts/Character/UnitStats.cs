@@ -23,6 +23,10 @@ public class UnitStats : MonoBehaviour
 
     [HideInInspector] public int currentHealth; // 현재 체력
 
+    public string unitName; //유닛 이름
+    public Sprite unitImage; // Button에 띄어둘 유닛 이미지
+    public float unitCooldown; // 유닛 재소환 시간
+
     void Start()
     {
         currentHealth = maxHealth; // 초기 체력을 최대 체력으로 설정
