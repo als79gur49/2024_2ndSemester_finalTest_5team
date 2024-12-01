@@ -113,10 +113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5de232cf48ff34ab80698c2bc6a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 1
   maxHealth: 11
   attackDamage: 6
   attackCooldown: 1
   attackRange: 3
+  goldCost: 0
+  goldReward: 10
   currentHealth: 0
 --- !u!50 &8684005335636285415
 Rigidbody2D:
