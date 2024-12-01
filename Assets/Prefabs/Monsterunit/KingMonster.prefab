@@ -121,6 +121,9 @@ MonoBehaviour:
   goldCost: 0
   goldReward: 0
   currentHealth: 0
+  unitName: "\uB300\uC7A5"
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &-5068615907628416331
 Rigidbody2D:
   serializedVersion: 4

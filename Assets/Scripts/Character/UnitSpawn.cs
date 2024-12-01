@@ -21,6 +21,7 @@ public class UnitSpawn : MonoBehaviour
     void Start()
     {
         goldSystem = FindObjectOfType<GoldSystem>();
+        SpawnMonster(); // 몬스터 생성
     }
 
     void Update()
@@ -28,7 +29,7 @@ public class UnitSpawn : MonoBehaviour
         // 시간이 일정 간격 이상 경과했다면 몬스터 생성
         if (Time.time >= lastSpawnTime + spawnDelay)
         {
-            SpawnMonster(); // 몬스터 생성
+            //SpawnMonster(); // 몬스터 생성
             lastSpawnTime = Time.time; // 마지막 생성 시간을 현재 시간으로 업데이트
         }
     }

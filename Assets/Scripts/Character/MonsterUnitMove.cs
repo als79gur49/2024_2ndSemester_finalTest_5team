@@ -10,6 +10,7 @@ public class MonsterUnitMove : MonoBehaviour
 
     private UnitStats stats; // 유닛 스탯
     private float lastAttackTime = 0f; // 마지막 공격시간
+    private Coroutine attackCoroutine;
 
     void Start()
     {
@@ -37,25 +38,27 @@ public class MonsterUnitMove : MonoBehaviour
     //충돌 여부
     private void OnTriggerStay2D(Collider2D collision)
     {
-        // Player 태그를 가진 오브젝트와 충돌하였을 때
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Enemy"))
         {
-            isAttack = true;
-            if (Time.time > lastAttackTime + stats.attackCooldown)
+            if (attackCoroutine == null)
             {
-                UnitStats playerStats = collision.GetComponent<UnitStats>();
-                if (playerStats != null)
-                {
-                    // 적에게 데미지를 입힘
-                    playerStats.TakeDamage(stats.attackDamage);
-                    Debug.Log($"{gameObject.name}이 {collision.gameObject.name}에게 {stats.attackDamage} 데미지를 입혔습니다.");
-                    lastAttackTime = Time.time; // 공격 시간 갱신
-                }
+                attackCoroutine = StartCoroutine(AttackCoroutine(collision));
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         isAttack = false;
+    }
+    private IEnumerator AttackCoroutine(Collider2D collision)
+    {
+        UnitStats playerStats = collision.GetComponent<UnitStats>();
+        isAttack = true;
+        while (true) // 충돌이 지속되는 동안 반복
+        {
+            playerStats.TakeDamage(stats.attackDamage); // 공격 실행
+
+            yield return new WaitForSeconds(stats.attackCooldown); // 쿨타임 기다리기
+        }
     }
 }

@@ -119,8 +119,11 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 1
   goldCost: 0
-  goldReward: 20
+  goldReward: 200
   currentHealth: 0
+  unitName: "\uAE30\uC0AC"
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &-7580189451235957219
 Rigidbody2D:
   serializedVersion: 4

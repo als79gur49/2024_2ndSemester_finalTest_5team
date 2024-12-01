@@ -9,14 +9,15 @@ public class UnitMove : MonoBehaviour
     private bool isAttack = false;
 
     private UnitStats stats; // 유닛 스탯
-    private float lastAttackTime = 0f; // 마지막 공격시간
+    private float lastAttackTime; // 마지막 공격시간
+    private Coroutine attackCoroutine;
 
     void Start()
     {
         stats = GetComponent<UnitStats>();
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!isAttack)
         {
@@ -37,27 +38,30 @@ public class UnitMove : MonoBehaviour
     //충돌 하고 있을 때
     private void OnTriggerStay2D(Collider2D collision)
     {
-
-        // Enemy 태그를 가진 오브젝트와 충돌하였을 때
         if (collision.CompareTag("Enemy"))
         {
-            isAttack = true;
-            if (Time.time > lastAttackTime + stats.attackCooldown)
+            if(attackCoroutine == null)
             {
-                UnitStats enemyStats = collision.GetComponent<UnitStats>();
-                if (enemyStats != null)
-                {
-                    // 적에게 데미지를 입힘
-                    enemyStats.TakeDamage(stats.attackDamage);
-                    Debug.Log($"{gameObject.name}이 {collision.gameObject.name}에게 {stats.attackDamage} 데미지를 입혔습니다.");
-                    lastAttackTime = Time.time; // 공격 시간 갱신
-                }
+                attackCoroutine = StartCoroutine(AttackCoroutine(collision));
             }
         }
     }
+
     // 충돌이 벗어날 때
     private void OnTriggerExit2D(Collider2D collision)
     {
         isAttack = false;
+    }
+
+    private IEnumerator AttackCoroutine(Collider2D collision)
+    {
+        UnitStats enemyStats = collision.GetComponent<UnitStats>();
+        isAttack = true;
+        while (true) // 충돌이 지속되는 동안 반복
+        {
+            enemyStats.TakeDamage(stats.attackDamage); // 공격 실행
+
+            yield return new WaitForSeconds(stats.attackCooldown); // 쿨타임 기다리기
+        }
     }
 }

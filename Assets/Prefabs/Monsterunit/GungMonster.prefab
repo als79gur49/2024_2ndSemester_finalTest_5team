@@ -119,8 +119,11 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 3
   goldCost: 0
-  goldReward: 10
+  goldReward: 200
   currentHealth: 0
+  unitName: "\uAD81\uBCD1"
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &8684005335636285415
 Rigidbody2D:
   serializedVersion: 4

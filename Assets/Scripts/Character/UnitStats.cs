@@ -13,7 +13,7 @@ public class UnitStats : MonoBehaviour
     public UnitType unitType; // 유닛 타입
     public int maxHealth; // 최대 체력
     public int attackDamage; // 공격력
-    public float attackCooldown = 1.0f; // 공격 쿨타임
+    public float attackCooldown; // 공격 쿨타임
     public float attackRange = 1.5f; // 공격 범위
 
     public int goldCost; // 유닛 별 가격
@@ -36,20 +36,19 @@ public class UnitStats : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} 체력: {currentHealth}");
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
+            Destroy(gameObject);
         }
-        
-    }
 
+    }
     private void Die()
     {
         if(unitType == UnitType.Enemy)
         {
             // 적 유닛 사망 시 골드 지급
-            goldSystem.AddGold(goldReward);
+           // goldSystem.AddGold(goldReward);
         }
-        Destroy(gameObject);
     }
 }
