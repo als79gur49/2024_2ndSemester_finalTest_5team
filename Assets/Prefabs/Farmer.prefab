@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2026456113622632220}
   - component: {fileID: 887645700107324011}
   m_Layer: 0
-  m_Name: TestEnemy03
+  m_Name: Farmer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

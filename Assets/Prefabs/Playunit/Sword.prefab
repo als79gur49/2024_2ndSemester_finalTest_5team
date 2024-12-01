@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7134167068445482926}
   - component: {fileID: -7492012051218343968}
   - component: {fileID: -3961598276530666933}
+  - component: {fileID: -587336413027662782}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Player
@@ -162,7 +163,12 @@ MonoBehaviour:
   attackDamage: 7
   attackCooldown: 1
   attackRange: 1
+  goldCost: 0
+  goldReward: 0
   currentHealth: 0
+  unitName: 
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &-3961598276530666933
 Rigidbody2D:
   serializedVersion: 4
@@ -190,3 +196,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-587336413027662782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725557359625916606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd24025d3853a02428bc2331b598a840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

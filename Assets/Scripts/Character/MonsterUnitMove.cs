@@ -30,7 +30,6 @@ public class MonsterUnitMove : MonoBehaviour
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
     }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         isAttack = true;

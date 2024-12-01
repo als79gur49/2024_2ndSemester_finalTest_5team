@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterAttack : MonoBehaviour
+public class UnitAttack : MonoBehaviour
 {
     private UnitStats stats; // 유닛 스탯
-    private float lastAttackTime = 0f; // 마지막 공격시간
+    private float lastAttackTime; // 마지막 공격시간
     private Coroutine attackCoroutine;
     private bool isAttack = false; // 공격 여부
-    // Start is called before the first frame update
+
     void Start()
     {
         stats = GetComponent<UnitStats>();
     }
-
-    //충돌 여부
+    //충돌 하고 있을 때
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Enemy"))
         {
+            isAttack = true;
             if (attackCoroutine == null)
             {
-                isAttack = true;
+                
                 attackCoroutine = StartCoroutine(AttackCoroutine(collision));
             }
         }
@@ -32,11 +32,10 @@ public class MonsterAttack : MonoBehaviour
     }
     private IEnumerator AttackCoroutine(Collider2D collision)
     {
-        UnitStats playerStats = collision.GetComponent<UnitStats>();
-        isAttack = true;
+        UnitStats enemyStats = collision.GetComponent<UnitStats>();
         while (true) // 충돌이 지속되는 동안 반복
         {
-            playerStats.TakeDamage(stats.attackDamage); // 공격 실행
+            enemyStats.TakeDamage(stats.attackDamage); // 공격 실행
 
             yield return new WaitForSeconds(stats.attackCooldown); // 쿨타임 기다리기
         }

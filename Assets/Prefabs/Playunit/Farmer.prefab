@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4782633247462774725}
   - component: {fileID: -4329372957670974943}
   - component: {fileID: 4196619253252957069}
+  - component: {fileID: -3491163393658111836}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: Player
@@ -163,7 +164,11 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 1
   goldCost: 10
+  goldReward: 0
   currentHealth: 0
+  unitName: 
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &4196619253252957069
 Rigidbody2D:
   serializedVersion: 4
@@ -191,3 +196,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3491163393658111836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32194321325653353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd24025d3853a02428bc2331b598a840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

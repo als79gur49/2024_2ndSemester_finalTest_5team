@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 153765431735972081}
   - component: {fileID: -4142494474834263720}
   - component: {fileID: 8665609187734737803}
+  - component: {fileID: 204983003750846878}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Player
@@ -162,7 +163,12 @@ MonoBehaviour:
   attackDamage: 5
   attackCooldown: 1
   attackRange: 3
+  goldCost: 0
+  goldReward: 0
   currentHealth: 0
+  unitName: 
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &8665609187734737803
 Rigidbody2D:
   serializedVersion: 4
@@ -190,3 +196,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &204983003750846878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380370485221562794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd24025d3853a02428bc2331b598a840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
