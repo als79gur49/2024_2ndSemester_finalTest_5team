@@ -13,23 +13,4 @@ public class UpdateGold : MonoBehaviour
     {
         goldText.text = curr + "G";
     }
-    /* //UnityEvent이용해서 Gold관리하는 곳에서 골드변할 때마다 Event 실행시키기 아래는 Gold관리하는 곳의 예시 코드, 인스펙터 창에 붙히면 됨.
-    using UnityEngine;
-using UnityEngine.Events;
-public class TestUpdateGoldHUD : MonoBehaviour
-{
-    public UnityEvent<int, int> OnGoldChanged;
-
-    public int gold = 0;
-
-    public void AddGold()
-    {
-        int prev = gold;
-        gold += 3;
-
-        OnGoldChanged?.Invoke(prev, gold);
-    }
-}
-
-    */
 }

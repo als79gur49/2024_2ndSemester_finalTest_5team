@@ -15,7 +15,9 @@ public class SoundManager : MonoBehaviour
     //bgm의 경우 일반적인 Play
     //Effect는 shot으로 주로 Play
     [SerializeField]
-    private AudioMixer audioMixer; 
+    private AudioMixer audioMixer;
+
+    [Header("사운드 플레이어")]
     [SerializeField] 
     private GameObject bgmPlayer;
     public GameObject BGMPlayer => bgmPlayer;
@@ -23,6 +25,7 @@ public class SoundManager : MonoBehaviour
     private GameObject effectPlayer;
     public GameObject EffectPlayer => effectPlayer;
 
+    [Header("볼륨 변수")]
     #region 볼륨 수정하는 변수들 
     //TODO: 볼륨의 크기가 선형이 아니라 로그 스케일인 것 같음. 변환이 필요
     [SerializeField]
@@ -66,6 +69,7 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    [Header("사운드 클립")]
     [SerializeField] //Dictionary로 중복되지 않게 하려고 했는데 Dictionary는 Serialize가 되지 않아서 따로 class생성
     private List<Pair> bgmClips;
     [SerializeField]

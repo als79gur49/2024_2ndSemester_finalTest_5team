@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ButtonClickLimit : MonoBehaviour
 {
-    //Button 이벤트에 연결 및 매개변수 전달
+    //interact를 비활성화 하고 싶은 버튼 컴포넌트 붙히고, 클릭할 버튼 이벤트에 넣기
     [SerializeField]
     private Button button;
     

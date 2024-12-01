@@ -28,8 +28,8 @@ public class DataManager : MonoBehaviour
     }
 
 
-    private JsonSaveAndLoader saveAndLoader;
-    private PlayerData playerData;
+    private JsonSaveAndLoader saveAndLoader; // Json 읽기 쓰기 클래스
+    private PlayerData playerData;  //데이터
 
     public PlayerData PlayerData //TODO: 시간 되면 Wrapper클래스처럼 외부 노출 제어해보기
     {

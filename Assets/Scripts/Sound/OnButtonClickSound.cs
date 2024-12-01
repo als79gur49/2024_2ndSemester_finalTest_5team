@@ -7,7 +7,7 @@ public class OnButtonClickSound : MonoBehaviour
     {
         if(SoundManager.Instance.PlayEffectAudio("Click"))
         {
-            //
+            //추가 내용
         }
         else
         {

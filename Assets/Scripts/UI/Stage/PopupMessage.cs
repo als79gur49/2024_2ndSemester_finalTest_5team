@@ -12,7 +12,7 @@ public class PopupMessage : MonoBehaviour
     //에러 or 획득 등 팝업 text 띄우는 용도
     //텍스트 창이 생기고 특정 방향으로 이동하다 시간이 지나면 삭제되는 텍스트
     [SerializeField]
-    private GameObject popUpText; //오브젝트에 바로 text붙일 예정
+    private GameObject popUpText; //tmp를 가지는 객체
     [SerializeField]
     private GameObject targetCanvas; //띄워질 캔버스
 

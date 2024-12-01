@@ -1,7 +1,8 @@
 using UnityEngine;
-//using UnityEngine.UI;
+
 public class PanelController : MonoBehaviour
 {
+    //Button 컴포넌트에 붙어서 특정 UI OnOff
     [SerializeField]
     private GameObject selectedPanel;
 
