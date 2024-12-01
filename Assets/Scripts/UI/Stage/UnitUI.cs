@@ -7,10 +7,17 @@ using UnityEngine.UI;
 
 public class UnitUI : MonoBehaviour
 {
+    [Header("게임오브젝트 프리팹")]
     [SerializeField]
-    private TextMeshProUGUI chracterName; //캐릭터 이름
+    private UnitStats unitObject;
     [SerializeField]
-    private Image characterImgae; //캐릭터 이미지
+    private int spendGold;
+
+    [Header("내부 배치 UI")]
+    [SerializeField]
+    private TextMeshProUGUI characterName; //캐릭터 이름
+    [SerializeField]
+    private Image characterImage; //캐릭터 이미지
     [SerializeField]
     private Button spawnButton; //소환 버튼
     [SerializeField]
@@ -19,24 +26,26 @@ public class UnitUI : MonoBehaviour
 
     //쿨다운 확인 -> 골드 확인 -> 최대 소환 수 확인 -> 소환
     private bool isCooldownReady = true;
-
+    private float characterCooldown;
 
     private Coroutine cooldownCoroutine; //현재 실행 중인 코루틴, stopCoroutine은 매개변수 있을 경우 작동하지 않는 듯
 
+    private GoldSystem goldSystem;
+
     private void Awake()
     {
-        //chracterName.text = 유닛.name;
-        //chracterImage
-        //cooldownImage
-        
-        //spawnButton.onClick.AddListener(Spawn);
+        characterName.text = unitObject.unitName;
+        characterImage.sprite = unitObject.unitImage;
+        characterCooldown = unitObject.unitCooldown;
+
+        goldSystem = FindObjectOfType<GoldSystem>();
     }
 
     public void Spawn()
     {
         if(isCooldownReady) //쿨다운 확인, 값 변경은 UpdateHUD에 붙어있음
         {
-            if(true) //골드 확인
+            if(goldSystem.currentGold >= spendGold) //골드 확인
             {
                 if(true) // 최대 소환 수 확인
                 {
@@ -44,10 +53,13 @@ public class UnitUI : MonoBehaviour
                     {
                         StopCoroutine(cooldownCoroutine);
                     }
-                    cooldownCoroutine = StartCoroutine(UpdateHUD(3, cooldownImage));
+                    cooldownCoroutine = StartCoroutine(UpdateHUD(characterCooldown, cooldownImage)); //쿨다운 동안 이미지 + 쿨다운 OnOff
+
+                    Instantiate(unitObject);
+                    goldSystem.SpendGold(spendGold);
 
                     Debug.Log("Spawn");
-                    //Spawner에서 소환
+                
                 }
                 else
                 {

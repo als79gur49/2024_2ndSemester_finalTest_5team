@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEditor;
 
 public class GoldSystem : MonoBehaviour
 {
@@ -9,8 +11,9 @@ public class GoldSystem : MonoBehaviour
     public int GainGold = 10; // 초당 지급되는 골드
     private float timer = 0f; // 시간 추적
 
-    public Text goldText; // UI 텍스트 표시
     public Button[] spendGoldButton; // UI 버튼 표시
+
+    public UnityEvent<int, int> OnUpdateGold; // prev, current
 
     // Start is called before the first frame update
     void Start()
@@ -35,20 +38,19 @@ public class GoldSystem : MonoBehaviour
     public void AddGold(int amount)
     {
         currentGold += amount;
-        UpdateGoldText(); // UI 업데이트
+
+        OnUpdateGold.Invoke((currentGold - amount), currentGold); // UI 업데이트
     }
     // 골드 표시 텍스트 업데이트
-    private void UpdateGoldText()
-    {
-        goldText.text = "Gold" + currentGold;
-    }
+
     // 골드를 소비하는 메서드
     public void SpendGold(int amount)
     {
         if (currentGold >= amount)
         {
             currentGold -= amount;
-            UpdateGoldText(); // UI 업데이트
+
+            OnUpdateGold.Invoke((currentGold + amount), currentGold); // UI 업데이트
         }
     }
 }
