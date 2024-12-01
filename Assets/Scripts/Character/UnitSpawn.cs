@@ -14,7 +14,7 @@ public class UnitSpawn : MonoBehaviour
     public UnitStats[] units; // 유닛 정보 배열
     private GoldSystem goldSystem;
 
-    public float spawnDelay = 2f; // 몬스터 생성 간격
+    public float spawnDelay = 5f; // 몬스터 생성 간격
 
     private float lastSpawnTime; // 마지막으로 몬스터를 생성한 시간
 
