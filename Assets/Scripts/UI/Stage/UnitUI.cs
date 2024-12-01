@@ -31,6 +31,7 @@ public class UnitUI : MonoBehaviour
     private Coroutine cooldownCoroutine; //현재 실행 중인 코루틴, stopCoroutine은 매개변수 있을 경우 작동하지 않는 듯
 
     private GoldSystem goldSystem;
+    private UnitSpawn gameManager;
 
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class UnitUI : MonoBehaviour
         characterCooldown = unitObject.unitCooldown;
 
         goldSystem = FindObjectOfType<GoldSystem>();
+        gameManager = FindAnyObjectByType<UnitSpawn>();
     }
 
     public void Spawn()
@@ -55,7 +57,7 @@ public class UnitUI : MonoBehaviour
                     }
                     cooldownCoroutine = StartCoroutine(UpdateHUD(characterCooldown, cooldownImage)); //쿨다운 동안 이미지 + 쿨다운 OnOff
 
-                    Instantiate(unitObject);
+                    Instantiate(unitObject, gameManager.PlayerspawnPoint);
                     goldSystem.SpendGold(spendGold);
 
                     Debug.Log("Spawn");
