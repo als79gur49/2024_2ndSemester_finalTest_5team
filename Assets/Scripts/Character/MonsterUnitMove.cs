@@ -32,10 +32,12 @@ public class MonsterUnitMove : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isAttack = true;
+        if(collision.CompareTag("Player"))
+            isAttack = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isAttack = false;
+        if (collision.CompareTag("Player"))
+            isAttack = false;
     }
 }

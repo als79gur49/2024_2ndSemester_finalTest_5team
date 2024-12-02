@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UnitType
+{
+    UnitTower,
+    Unit,
+    Boss,
+    MonsterUnit,
+    Monstermansion,
+    Monstercastlegate
+}
+
 [System.Serializable]
 public class UnitStats : MonoBehaviour
 {
+    public UnitType unitType;
     public int maxHealth; // 최대 체력
     public int attackDamage; // 공격력
     public float attackCooldown; // 공격 쿨타임
@@ -15,11 +26,13 @@ public class UnitStats : MonoBehaviour
     private GoldSystem goldSystem;
     
 
-    [HideInInspector] public int currentHealth; // 현재 체력
+    public int currentHealth; // 현재 체력
 
     public string unitName; //유닛 이름
     public Sprite unitImage; // Button에 띄어둘 유닛 이미지
     public float unitCooldown; // 유닛 재소환 시간
+
+    public GameObject stageClearPanel; // 스테이지 클리어 패널
 
     void Start()
     {
@@ -31,6 +44,7 @@ public class UnitStats : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} 체력: {currentHealth}");
+
         if (currentHealth <= 0)
         {
             Die();
@@ -44,11 +58,23 @@ public class UnitStats : MonoBehaviour
             if (goldSystem != null)
             {
                 //적 유닛 사망 시 골드 지급
-                goldSystem.AddGold(goldReward);
-                Debug.Log($"{goldSystem.currentGold}");
+                if(unitType == UnitType.MonsterUnit)
+                {
+                    goldSystem.AddGold(goldReward);
+                    Debug.Log($"{goldSystem.currentGold}");
+                }
             }
-
         }
+        if (unitType == UnitType.Boss && currentHealth <= 0)
+        {
+            GameManager.Instance.ShowStageClearPanel();
+        }
+
+        if(unitType == UnitType.UnitTower && currentHealth <= 0)
+        {
+            GameManager.Instance.ShowstageDefeatPanel();
+        }
+
         Destroy(gameObject);
     }
 }
