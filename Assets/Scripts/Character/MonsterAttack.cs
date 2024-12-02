@@ -20,16 +20,28 @@ public class MonsterAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (attackCoroutine == null)
+            if (!isAttack) // 공격중이 아니라면
             {
                 isAttack = true;
+                if (attackCoroutine != null)
+                {
+                    StopCoroutine(attackCoroutine); // 기존의 공격 코루틴이 있다면 중지
+                }
                 attackCoroutine = StartCoroutine(AttackCoroutine(collision));
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isAttack = false;
+        if (collision.CompareTag("Player"))
+        {
+            isAttack = false;
+            if (attackCoroutine != null)
+            {
+                StopCoroutine(attackCoroutine); // 충돌이 끝났으므로 코루틴 중지
+                attackCoroutine = null;
+            }
+        }
     }
     private IEnumerator AttackCoroutine(Collider2D collision)
     {

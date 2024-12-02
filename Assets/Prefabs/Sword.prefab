@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6343914384488407133}
   - component: {fileID: 338937752687723376}
   - component: {fileID: -2717510803507941618}
+  - component: {fileID: 4033780920203382368}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Player
@@ -100,17 +101,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5de232cf48ff34ab80698c2bc6a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitType: 0
+  unitType: 1
   maxHealth: 15
   attackDamage: 7
   attackCooldown: 2
   attackRange: 1.5
-  goldCost: 80
   goldReward: 0
   currentHealth: 0
   unitName: "\uAC80\uC0AC"
   unitImage: {fileID: 21300000, guid: 1f2e52fa77264cb4aa83f1036b3c959b, type: 3}
   unitCooldown: 8
+  stageClearPanel: {fileID: 0}
 --- !u!114 &6343914384488407133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,3 +197,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4033780920203382368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695033054197136513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd24025d3853a02428bc2331b598a840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

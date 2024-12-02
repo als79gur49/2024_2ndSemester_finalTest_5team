@@ -21,7 +21,6 @@ public class UnitStats : MonoBehaviour
     public float attackCooldown; // 공격 쿨타임
     public float attackRange = 1.5f; // 공격 범위
 
-    public int goldCost; // 유닛 별 가격
     public int goldReward; // 적 유닛 처치 시 지급할 골드
     private GoldSystem goldSystem;
     
@@ -39,7 +38,6 @@ public class UnitStats : MonoBehaviour
         currentHealth = maxHealth; // 초기 체력을 최대 체력으로 설정
         goldSystem = FindObjectOfType<GoldSystem>();
     }
-
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -49,7 +47,6 @@ public class UnitStats : MonoBehaviour
         {
             Die();
         }
-
     }
     private void Die()
     {
