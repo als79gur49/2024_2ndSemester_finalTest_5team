@@ -167,7 +167,7 @@ MonoBehaviour:
   goldCost: 10
   goldReward: 0
   currentHealth: 0
-  unitName: 
+  unitName: fa
   unitImage: {fileID: 0}
   unitCooldown: 0
   stageClearPanel: {fileID: 0}

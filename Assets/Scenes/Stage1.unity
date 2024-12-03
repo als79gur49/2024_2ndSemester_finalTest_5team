@@ -2165,6 +2165,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5712960569609338630, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
+      propertyPath: effectClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 37357d9fce0757c4a8611085dd1ec8ec, type: 3}
+    - target: {fileID: 5712960569609338630, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
+      propertyPath: effectClips.Array.data[2].name
+      value: PlayerUnitSpawn
+      objectReference: {fileID: 0}
     - target: {fileID: 7536266448773801332, guid: fa6b072a26de416429c04bfd0feb791e, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -2873,7 +2881,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1367841800}
         m_TargetAssemblyTypeName: OnButtonClickSound, Assembly-CSharp
-        m_MethodName: BasicSound
+        m_MethodName: PlayerUnitSpawnSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3122,6 +3130,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532706980}
   m_CullTransparentMesh: 1
+--- !u!1 &1545274780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545274782}
+  - component: {fileID: 1545274781}
+  m_Layer: 0
+  m_Name: TestPlayerTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1545274781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545274780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5de232cf48ff34ab80698c2bc6a9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitType: 0
+  maxHealth: 100
+  attackDamage: 0
+  attackCooldown: 0
+  attackRange: 1.5
+  goldCost: 0
+  goldReward: 0
+  currentHealth: 100
+  unitName: 
+  unitImage: {fileID: 0}
+  unitCooldown: 0
+  stageClearPanel: {fileID: 0}
+--- !u!4 &1545274782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545274780}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.68, y: 5.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1633693763
 GameObject:
   m_ObjectHideFlags: 0
@@ -3529,6 +3593,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 1, y: 1}
+--- !u!1 &1732392752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732392754}
+  - component: {fileID: 1732392753}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1732392753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732392752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65597a95870acd42b600af8a8bf0e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnWinEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDefeatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  victoryPanel: {fileID: 1755745409}
+  defeatedPanel: {fileID: 253860790856241979}
+  playerTower: {fileID: 1545274781}
+--- !u!4 &1732392754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732392752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.21133333, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1755745405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4452,6 +4569,7 @@ GameObject:
   - component: {fileID: 1899392249}
   - component: {fileID: 1899392248}
   - component: {fileID: 1899392247}
+  - component: {fileID: 1899392250}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4476,7 +4594,6 @@ MonoBehaviour:
   - {fileID: 4871057617929954885, guid: c79aea93d6f0b46418cf9132ce1679ec, type: 3}
   PlayerspawnPoint: {fileID: 1759415468}
   MonsterspawnPoint: {fileID: 255020582}
-  units: []
   spawnDelay: 5
 --- !u!114 &1899392248
 MonoBehaviour:
@@ -4522,6 +4639,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1899392250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899392246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683a61b888a5a3b44960cc0816645440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1908516382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5217,10 +5346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55189381bc7badf4082f849664e5221f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitObject: {fileID: 8885673483396807035, guid: d8b4b966aa0f7414ca4f13a322ac4ec1, type: 3}
+  unitObject: {fileID: -4329372957670974943, guid: 8e81c8424014b1a4ba79263bc43759a3, type: 3}
   spendGold: 50
-  characterName: {fileID: 0}
-  characterImage: {fileID: 0}
+  characterName: {fileID: 824725636}
+  characterImage: {fileID: 268432494}
   spawnButton: {fileID: 1367841797}
   cooldownImage: {fileID: 1945648688}
 --- !u!114 &2107341274
@@ -5902,3 +6031,5 @@ SceneRoots:
   - {fileID: 1759415468}
   - {fileID: 385933742}
   - {fileID: 255020582}
+  - {fileID: 1732392754}
+  - {fileID: 1545274782}

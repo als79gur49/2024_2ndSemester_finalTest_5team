@@ -1,6 +1,8 @@
 using System.IO;
 using UnityEngine;
 using System.Text;
+using System.Text.RegularExpressions;
+using UnityEditor.Experimental.Rendering;
 
 [RequireComponent(typeof(JsonSaveAndLoader))]
 public class DataManager : MonoBehaviour
@@ -65,5 +67,42 @@ public class DataManager : MonoBehaviour
     public void SaveData()
     {
         saveAndLoader.SaveData(playerData);
+    }
+
+    public void UpdateData()
+    {
+        StageManager stageManager = FindObjectOfType<StageManager>();
+        if(stageManager != null)
+        {
+            string pattern = @"^([A-Za-z]+)(\d+)$";////문자열과 숫자를 분리 ex) Stage1 -> Stage, 1
+            if ( ! Regex.IsMatch(stageManager.SceneName, pattern))
+            {
+                Debug.Log($"{stageManager.SceneName} 씬 이름이 {pattern}형식을 따르지 않습니다");
+                return;
+            }
+
+            if( ! stageManager.IsCleard)
+            {
+                //바꿀데이터가 데이터가 없기에 반환
+                return;
+            }
+
+            
+            Match match = Regex.Match(stageManager.SceneName, pattern); //문자열과 숫자를 분리 ex) Stage1 -> Stage, 1
+            int stageLevel = int.Parse(match.Groups[2].Value); // 숫자부분을 int로 변경
+
+            //클리어한 스테이지 변경
+            if (stageLevel > PlayerData.stageLevel)
+            {
+                Debug.Log($"클리어한 최대 스테이지를 {PlayerData.stageLevel} -> {stageLevel}로 변경");
+                PlayerData.stageLevel = stageLevel;
+            }
+
+            //stageInfos 세부 정보 변경
+            
+            PlayerData.stageInfos[stageLevel].stageClearState = StageClearState.Cleard;
+            Debug.Log($"{PlayerData.stageInfos[stageLevel].achievedStars} -> {stageManager.AchievedStars}로 별 개수 변경");
+            PlayerData.stageInfos[stageLevel].achievedStars = stageManager.AchievedStars;
+        }
     }
 }

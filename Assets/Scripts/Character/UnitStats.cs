@@ -67,12 +67,12 @@ public class UnitStats : MonoBehaviour
         }
         if (unitType == UnitType.Boss && currentHealth <= 0)
         {
-            GameManager.Instance.OnWinEvent.Invoke();
+            FindObjectOfType<StageManager>()?.OnWinEvent.Invoke();
         }
 
         if(unitType == UnitType.UnitTower && currentHealth <= 0)
         {
-            GameManager.Instance.OnDefeatEvent.Invoke();
+            FindObjectOfType<StageManager>()?.OnDefeatEvent.Invoke();
         }
 
         Destroy(gameObject);
