@@ -170,6 +170,7 @@ MonoBehaviour:
   unitName: 
   unitImage: {fileID: 0}
   unitCooldown: 0
+  stageClearPanel: {fileID: 0}
 --- !u!50 &4196619253252957069
 Rigidbody2D:
   serializedVersion: 4
