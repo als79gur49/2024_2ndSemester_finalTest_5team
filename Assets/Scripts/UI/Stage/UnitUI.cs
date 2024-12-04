@@ -13,6 +13,12 @@ public class UnitUI : MonoBehaviour
     [SerializeField]
     private int spendGold;
 
+    [Header("캔버스 관련")]
+    [SerializeField]
+    private GameObject targetCanvas;
+    [SerializeField]
+    private GameObject healthText;    
+
     [Header("내부 배치 UI")]
     [SerializeField]
     private TextMeshProUGUI characterName; //캐릭터 이름
@@ -22,6 +28,8 @@ public class UnitUI : MonoBehaviour
     private Button spawnButton; //소환 버튼
     [SerializeField]
     private Image cooldownImage; //쿨다운 나타낼 이미지 or 텍스트
+    [SerializeField]
+    private TextMeshProUGUI spawnSpendGold;
     //스포너 스크립트
 
     //쿨다운 확인 -> 골드 확인 -> 최대 소환 수 확인 -> 소환
@@ -35,9 +43,20 @@ public class UnitUI : MonoBehaviour
 
     private void Awake()
     {
-        characterName.text = unitObject.unitName;
-        characterImage.sprite = unitObject.unitImage;
+        if(characterName != null)
+        {
+            characterName.text = unitObject.unitName;
+        }
+        if(characterImage != null)
+        {
+            characterImage.sprite = unitObject.unitImage;
+        }
+        if(spawnSpendGold != null)
+        {
+            spawnSpendGold.text = spendGold + "G";
+        }
         characterCooldown = unitObject.unitCooldown;
+        
 
         goldSystem = FindObjectOfType<GoldSystem>();
         gameManager = FindAnyObjectByType<UnitSpawn>();
@@ -57,8 +76,16 @@ public class UnitUI : MonoBehaviour
                     }
                     cooldownCoroutine = StartCoroutine(UpdateHUD(characterCooldown, cooldownImage)); //쿨다운 동안 이미지 + 쿨다운 OnOff
 
-                    Instantiate(unitObject, gameManager.PlayerspawnPoint);
+                    UnitStats clone = Instantiate(unitObject, gameManager.PlayerspawnPoint);
                     goldSystem.SpendGold(spendGold);
+
+                    if(targetCanvas != null && healthText != null)
+                    {
+                        GameObject HPText = Instantiate(healthText);
+                        HPText.transform.SetParent(targetCanvas.transform);
+                        HPText.GetComponent<FollowUI>().SetUp(clone.HUDPoint);
+                        HPText.GetComponent<UpdateHealthText>().SetUp(clone);
+                    }
 
                     Debug.Log("Spawn");
                 

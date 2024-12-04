@@ -11,10 +11,9 @@ public class UnitSpawn : MonoBehaviour
     public Transform PlayerspawnPoint; // 플레이어 생성 위치
     public Transform MonsterspawnPoint; // 몬스터 생성 위치
 
-    public UnitStats[] units; // 유닛 정보 배열
     private GoldSystem goldSystem;
 
-    public float spawnDelay = 2f; // 몬스터 생성 간격
+    public float spawnDelay = 5f; // 몬스터 생성 간격
 
     private float lastSpawnTime; // 마지막으로 몬스터를 생성한 시간
 
@@ -36,29 +35,5 @@ public class UnitSpawn : MonoBehaviour
     {
         int randomIndex = Random.Range(0, MonsterUnit.Length);
         Instantiate(MonsterUnit[randomIndex], MonsterspawnPoint.position, Quaternion.identity); // 몬스터 생성유닛
-    }
-    public void SpawnFarmerUnit()
-    {
-        if(goldSystem != null && goldSystem.currentGold > 50)
-        {
-            goldSystem.SpendGold(50);
-            Instantiate(SpawnUnit[0], PlayerspawnPoint.position, Quaternion.identity);
-        }
-    }
-    public void SpawnSwordUnit()
-    {
-        if (goldSystem != null && goldSystem.currentGold > 80)
-        {
-            goldSystem.SpendGold(80);
-            Instantiate(SpawnUnit[1], PlayerspawnPoint.position, Quaternion.identity);
-        }
-    }
-    public void SpawnHunterUnit()
-    {
-        if (goldSystem != null && goldSystem.currentGold > 85)
-        {
-            goldSystem.SpendGold(85);
-            Instantiate(SpawnUnit[2], PlayerspawnPoint.position, Quaternion.identity);
-        }
     }
 }

@@ -11,10 +11,12 @@ public class GoldSystem : MonoBehaviour
     public int GainGold = 10; // 초당 지급되는 골드
     private float timer = 0f; // 시간 추적
 
-    public Button[] spendGoldButton; // UI 버튼 표시
-
     public UnityEvent<int, int> OnUpdateGold; // prev, current
 
+    private void Awake()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {

@@ -12,12 +12,44 @@ public class StarsController : MonoBehaviour
     private bool isActivated;
     private int achievedStars;
 
+    private UnitStats unitStats;
+
     private void Awake()
     {
         Init(isActivated, achievedStars);
     }
+    private void Update()
+    {
+        // UnitStats 스크립트를 가진 모든 UnitTower 오브젝트 찾기
+        UnitStats[] unitTowers = FindObjectsOfType<UnitStats>();
 
-    public void Init(bool isActivated, int achievedStars = 0)
+        foreach (var unitStats in unitTowers)
+        {
+            if (unitStats.unitType == UnitType.UnitTower)
+            {
+                // UnitTower의 currentHealth와 maxHealth가 같으면
+                if (unitStats.currentHealth == unitStats.maxHealth)
+                {
+                    isActivated = true;
+                    achievedStars = 3; // 별 1개 설정
+                    Init(isActivated, achievedStars); // 별 활성화 함수 호출
+                }
+                else if(unitStats.currentHealth < unitStats.maxHealth && unitStats.currentHealth >= unitStats.maxHealth / 2)
+                {
+                    isActivated = true;
+                    achievedStars = 2; // 별 1개 설정
+                    Init(isActivated, achievedStars); // 별 활성화 함수 호출
+                }
+                else if(unitStats.currentHealth < unitStats.maxHealth / 2 && unitStats.currentHealth > 0)
+                {
+                    isActivated = true;
+                    achievedStars = 1; // 별 1개 설정
+                    Init(isActivated, achievedStars); // 별 활성화 함수 호출
+                }
+            }
+        }
+    }
+        public void Init(bool isActivated, int achievedStars = 0)
     {
         List<StarInfo> targetStars = stars.Where(t => t.GetComponent<StarInfo>() != null). //StarInfo를 가지는 GameObject들 IEnumerable<GameObject>
                                             Select(t => t.GetComponent<StarInfo>()). // IEnumerable<GameObject> => IEnumerable<StarInfo>
