@@ -14,7 +14,7 @@ public class UnitMove : MonoBehaviour
     private UnitUI unitUI;
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         unitUI = FindObjectOfType<UnitUI>(); // UnitUI 스크립트 찾기
     }
     // Update is called once per frame
@@ -22,7 +22,13 @@ public class UnitMove : MonoBehaviour
     {
         if (!isAttack)
         {
-            Move();
+            Move(); // 공격 상태가 아니면 이동
+            anim.SetBool("isRun", true);
+        }
+        else
+        {
+            anim.SetBool("isAttack", true); // 공격 상태일때 애니메이션 출력
+            anim.SetBool("isRun", false);
         }
     }
 
@@ -33,7 +39,6 @@ public class UnitMove : MonoBehaviour
         if (target == null)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-            anim.SetBool("isAttack", false);
         }
     }
     // 충돌 유지
@@ -42,7 +47,10 @@ public class UnitMove : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             isAttack = true;
-            anim.SetBool("isAttack", true);
+            if (!isAttack)
+            {
+                anim.SetBool("isAttack", true);
+            }
         }
     }
 

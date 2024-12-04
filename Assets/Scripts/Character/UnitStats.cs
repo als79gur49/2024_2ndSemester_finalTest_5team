@@ -39,9 +39,11 @@ public class UnitStats : MonoBehaviour
 
     public Animator anim;
 
+    private UnitUI unitUI;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+        unitUI = FindObjectOfType<UnitUI>(); // UnitUI 스크립트 찾기
     }
     void Start()
     {
@@ -71,9 +73,17 @@ public class UnitStats : MonoBehaviour
                 {
                     goldSystem.AddGold(goldReward);
                     Debug.Log($"{goldSystem.currentGold}");
+                    Destroy(gameObject);
                 }
             }
         }
+        if (CompareTag("Player"))
+        {
+            Debug.Log("애니메이션 출력");
+            anim.SetTrigger("isDie");
+            StartCoroutine(WaitForDieAnimation());
+        }
+
         if (unitType == UnitType.Boss && currentHealth <= 0)
         {
             FindObjectOfType<StageManager>()?.OnWinEvent.Invoke();
@@ -83,6 +93,16 @@ public class UnitStats : MonoBehaviour
         {
             FindObjectOfType<StageManager>()?.OnDefeatEvent.Invoke();
         }
+    }
+    private IEnumerator WaitForDieAnimation()
+    {
+        // 애니메이션 상태 정보 얻기
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        // "isDie" 애니메이션이 끝날 때까지 대기 (애니메이션 길이만큼 대기)
+        yield return new WaitForSeconds(stateInfo.length);
+
+        // 애니메이션이 끝난 후 오브젝트 삭제
         Destroy(gameObject);
     }
 }

@@ -64,6 +64,7 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  anim: {fileID: 1681339180157445495}
 --- !u!114 &-5104565210117379773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   farmerPrefab: {fileID: 1695033054197136513}
+  anim: {fileID: 0}
 --- !u!50 &887645700107324011
 Rigidbody2D:
   serializedVersion: 4
