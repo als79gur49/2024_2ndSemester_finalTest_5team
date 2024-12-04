@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2747293843093654685}
   - component: {fileID: 2770366954301735994}
-  - component: {fileID: -6203212190691960724}
   - component: {fileID: 636705109320898653}
   - component: {fileID: -5068615907628416331}
   - component: {fileID: 4509670530987204351}
+  - component: {fileID: -5333861313916916247}
   m_Layer: 0
   m_Name: KingMonster
   m_TagString: Enemy
@@ -88,19 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6203212190691960724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5698258066105392177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf68ed87d73e5504f983bb409a5eaa0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
 --- !u!114 &636705109320898653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,11 +100,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5de232cf48ff34ab80698c2bc6a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 3
   maxHealth: 50
   attackDamage: 8
   attackCooldown: 2
   attackRange: 1.5
+  goldCost: 0
+  goldReward: 0
   currentHealth: 0
+  unitName: "\uB300\uC7A5"
+  unitImage: {fileID: 0}
+  unitCooldown: 0
 --- !u!50 &-5068615907628416331
 Rigidbody2D:
   serializedVersion: 4
@@ -190,3 +183,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5333861313916916247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698258066105392177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2da24abfac41384db89b51d9b184d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

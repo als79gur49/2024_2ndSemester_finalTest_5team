@@ -10,29 +10,29 @@
 			"stageClearState": 0,
 			"achievedStars": 0,
 			"sceneName": "Stage0",
-			"stageName": "이름 없음",
+			"stageName": "변경테스트",
 			"storyDetails": "인덱스0은 사용x"
 		},
 		{
 			"stageClearState": 3,
-			"achievedStars": 2,
+			"achievedStars": 3,
 			"sceneName": "Stage1",
-			"stageName": "슬라임 마을",
-			"storyDetails": "스테이지1에 대한 세부 설명"
+			"stageName": "돼지 마을",
+			"storyDetails": "늑대 귀족의 무분별한 세금걷기에 지친 돼지 평민들은 혁명을 선언했고, 세금 걷는 날, 돼지 평민들은 세금을 걷으려오는 늑대 귀족들을 공격했고 전투가 시작 됐다."
 		},
 		{
 			"stageClearState": 2,
 			"achievedStars": 0,
 			"sceneName": "Stage2",
-			"stageName": "슬라임 귀족 구역",
-			"storyDetails": "스테이지 2에 대한 세부 설명임"
+			"stageName": "늑대 귀족의 저택",
+			"storyDetails": "전투에서 승리한 돼지 평민들은 늑대 귀족이 착용했던 장비를 얻었고, 재정비 후 돼지 평민들은 왕국을 향하기전 돼지 마을과 가까운 세금을 관리하는 늑대 귀족의 저택으로 향해 전진한다."
 		},
 		{
 			"stageClearState": 1,
 			"achievedStars": 0,
 			"sceneName": "Stage3",
 			"stageName": "슬라임 왕국의 성문",
-			"storyDetails": "스테이지 3에 대한 세부 설명이다"
+			"storyDetails": "다시 한번 전투에서 승리한 돼지 평민들은 바로 재정비를 하였고, 돼지 평민들을 괴롭히는 만악의 근원, 왕국을 향해 전진한다."
 		},
 		{
 			"stageClearState": 1,
