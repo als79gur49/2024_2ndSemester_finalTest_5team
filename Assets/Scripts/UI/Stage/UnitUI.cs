@@ -9,7 +9,7 @@ public class UnitUI : MonoBehaviour
 {
     [Header("게임오브젝트 프리팹")]
     [SerializeField]
-    private UnitStats unitObject;
+    public UnitStats unitObject;
     [SerializeField]
     private int spendGold;
 
@@ -40,6 +40,8 @@ public class UnitUI : MonoBehaviour
 
     private GoldSystem goldSystem;
     private UnitSpawn gameManager;
+
+    private UnitMove unitMove;
 
     private void Awake()
     {
@@ -79,7 +81,9 @@ public class UnitUI : MonoBehaviour
                     UnitStats clone = Instantiate(unitObject, gameManager.PlayerspawnPoint);
                     goldSystem.SpendGold(spendGold);
 
-                    if(targetCanvas != null && healthText != null)
+                    //UnitMove unitmove = clone.GetComponent<UnitMove>();
+
+                    if (targetCanvas != null && healthText != null)
                     {
                         GameObject HPText = Instantiate(healthText);
                         HPText.transform.SetParent(targetCanvas.transform);
@@ -129,6 +133,5 @@ public class UnitUI : MonoBehaviour
         isCooldownReady = true;
         image.enabled = false;
     }
-
 }
 

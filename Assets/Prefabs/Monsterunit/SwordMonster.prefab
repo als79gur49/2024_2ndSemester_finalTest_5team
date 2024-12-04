@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6698113, g: 0.1990477, b: 0.1990477, a: 1}
   m_FlipX: 0
@@ -119,12 +119,17 @@ MonoBehaviour:
   attackDamage: 7
   attackCooldown: 1
   attackRange: 1
-  goldCost: 0
   goldReward: 20
   currentHealth: 0
   unitName: "\uAE30\uC0AC"
   unitImage: {fileID: 0}
   unitCooldown: 0
+  stageClearPanel: {fileID: 0}
+  HUDPoint: {fileID: 0}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  anim: {fileID: 0}
 --- !u!50 &-7580189451235957219
 Rigidbody2D:
   serializedVersion: 4

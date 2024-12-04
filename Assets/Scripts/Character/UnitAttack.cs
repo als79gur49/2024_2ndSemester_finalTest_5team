@@ -18,7 +18,7 @@ public class UnitAttack : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            if (!isAttack) // 공격중이 아니라면
+            if (!isAttack)
             {
                 isAttack = true;
                 if (attackCoroutine != null)
