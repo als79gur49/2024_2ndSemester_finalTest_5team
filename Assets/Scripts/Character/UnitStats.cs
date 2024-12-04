@@ -73,15 +73,24 @@ public class UnitStats : MonoBehaviour
                 {
                     goldSystem.AddGold(goldReward);
                     Debug.Log($"{goldSystem.currentGold}");
-                    Destroy(gameObject);
+                    if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+                    {
+                        Debug.Log("몬스터 애니메이션 출력");
+                        anim.SetTrigger("isDie");
+                        StartCoroutine(WaitForDieAnimation());
+                    }
                 }
             }
         }
         if (CompareTag("Player"))
         {
-            Debug.Log("애니메이션 출력");
-            anim.SetTrigger("isDie");
-            StartCoroutine(WaitForDieAnimation());
+            Debug.Log("플레이어 애니메이션 출력");
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+            {
+                anim.SetTrigger("isDie");
+                StartCoroutine(WaitForDieAnimation());
+            }
+
         }
 
         if (unitType == UnitType.Boss && currentHealth <= 0)

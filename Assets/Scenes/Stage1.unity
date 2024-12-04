@@ -189,7 +189,7 @@ SpriteRenderer:
   m_Size: {x: 7.44, y: 7.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &98659281
@@ -426,10 +426,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitObject: {fileID: 8885673483396807035, guid: d8b4b966aa0f7414ca4f13a322ac4ec1, type: 3}
   spendGold: 50
+  targetCanvas: {fileID: 0}
+  healthText: {fileID: 0}
   characterName: {fileID: 809168644}
   characterImage: {fileID: 1207422423}
   spawnButton: {fileID: 402943829}
   cooldownImage: {fileID: 502065391}
+  spawnSpendGold: {fileID: 0}
 --- !u!114 &192897205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,6 +1078,11 @@ MonoBehaviour:
   unitImage: {fileID: 0}
   unitCooldown: 0
   stageClearPanel: {fileID: 0}
+  HUDPoint: {fileID: 0}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  anim: {fileID: 0}
 --- !u!114 &457317030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,7 +1207,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 458e9399e49ba9f46a4e73a47c2d92e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2115,6 +2123,11 @@ MonoBehaviour:
   unitImage: {fileID: 0}
   unitCooldown: 0
   stageClearPanel: {fileID: 0}
+  HUDPoint: {fileID: 0}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  anim: {fileID: 0}
 --- !u!212 &756888089
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4060,7 +4073,7 @@ GameObject:
   - component: {fileID: 1744789917}
   - component: {fileID: 1744789916}
   m_Layer: 0
-  m_Name: KakaoTalk_20241128_202121977
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

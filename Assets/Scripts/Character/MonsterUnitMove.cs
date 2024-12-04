@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MonsterUnitMove : MonoBehaviour
 {
-    public float moveSpeed = 3f; // 이동 속도
+    public float moveSpeed = 1f; // 이동 속도
     private Transform target; // 공격할 적
     private bool isAttack = false;
 
+    Animator anim;
+
     void Start()
     {
-        
+        anim = GetComponentInChildren<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -18,6 +20,12 @@ public class MonsterUnitMove : MonoBehaviour
         if (!isAttack)
         {
             Move();
+            anim.SetBool("isRun", true);
+        }
+        else
+        {
+            anim.SetBool("isAttack", true); // 공격 상태일때 애니메이션 출력
+            anim.SetBool("isRun", false);
         }
     }
 
@@ -32,12 +40,25 @@ public class MonsterUnitMove : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        isAttack = true;
+        if (collision.CompareTag("Player"))
+        {
             isAttack = true;
+            if (!isAttack)
+            {
+                anim.SetBool("isAttack", true);
+            }
+        }
+            
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
+        isAttack = false;
         if (collision.CompareTag("Player"))
-            isAttack = false;
+        {
+            anim.SetBool("isAttack", false);
+        }
+            
     }
 }

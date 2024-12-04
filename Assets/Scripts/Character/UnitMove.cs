@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class UnitMove : MonoBehaviour
 {
-    public float moveSpeed = 3f; // 이동 속도
+    public float moveSpeed = 1f; // 이동 속도
     private Transform target; // 공격할 적
     private bool isAttack = false;
 
-    public GameObject farmerPrefab;
-    public Animator anim;
+    Animator anim;
 
-    private UnitUI unitUI;
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
-        unitUI = FindObjectOfType<UnitUI>(); // UnitUI 스크립트 찾기
     }
     // Update is called once per frame
     private void Update()
@@ -41,6 +38,7 @@ public class UnitMove : MonoBehaviour
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
         }
     }
+
     // 충돌 유지
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -57,9 +55,9 @@ public class UnitMove : MonoBehaviour
     // 충돌이 벗어날 때
     private void OnTriggerExit2D(Collider2D collision)
     {
+        isAttack = false;
         if (collision.CompareTag("Enemy"))
         {
-            isAttack = false;
             anim.SetBool("isAttack", false);
         }
     }
