@@ -47,7 +47,7 @@ public class MonsterAttack : MonoBehaviour
     {
         UnitStats playerStats = collision.GetComponent<UnitStats>();
         isAttack = true;
-        while (true) // 충돌이 지속되는 동안 반복
+        while (isAttack) // 충돌이 지속되는 동안 반복  /// true -> isAttack
         {
             playerStats.TakeDamage(stats.attackDamage); // 공격 실행
 

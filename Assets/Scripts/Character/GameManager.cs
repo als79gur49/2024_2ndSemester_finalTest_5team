@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // 싱글톤 패턴
-    public GameObject stageClearPanel;  // 스테이지 클리어 패널
-    public GameObject stageDefeatPanel; // 스테이지 실패 패널
+
+
+    
 
     private void Awake()
     {
@@ -22,18 +23,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ShowStageClearPanel()
+    public void StageClear()
     {
-        if (stageClearPanel != null)
-        {
-            stageClearPanel.SetActive(true);
-        }
+        DataManager.Instance.UpdateData(); //승리한 경우 해당 정보를 수정 및 저장
+        DataManager.Instance.SaveData();
+
+        FindObjectOfType<StageManager>().OpenVictoryPanel();
+
+        SoundManager.Instance.PlayBGMAudio("Success");
     }
-    public void ShowstageDefeatPanel()
+
+    public void StageDefeat()
     {
-        if (stageDefeatPanel != null)
-        {
-            stageDefeatPanel.SetActive(true);
-        }
+        //실패는 데이터관련 처리 X
+        FindObjectOfType<StageManager>().OpenDefeatPanel();
+
+        SoundManager.Instance.PlayBGMAudio("Defeated");
     }
 }

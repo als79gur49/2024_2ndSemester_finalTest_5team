@@ -26,4 +26,16 @@ public class OnButtonClickSound : MonoBehaviour
             Debug.Log("BattleStart에 해당하는 소리를 찾을 수 없음");
         }
     }
+
+    public void PlayerUnitSpawnSound()
+    {
+        if (SoundManager.Instance.PlayEffectAudio("PlayerUnitSpawn"))
+        {
+            //
+        }
+        else
+        {
+            Debug.Log("PlayerUnitSpawn에 해당하는 소리를 찾을 수 없음");
+        }
+    }
 }
