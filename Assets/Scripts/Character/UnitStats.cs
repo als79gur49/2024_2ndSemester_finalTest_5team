@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public enum UnitType
 {
     UnitTower,
@@ -33,6 +33,10 @@ public class UnitStats : MonoBehaviour
 
     public GameObject stageClearPanel; // 스테이지 클리어 패널
 
+   
+    public Transform HUDPoint;
+    public UnityEvent<int, int> OnHealthChanged; // current, max
+
     void Start()
     {
         currentHealth = maxHealth; // 초기 체력을 최대 체력으로 설정
@@ -42,6 +46,8 @@ public class UnitStats : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} 체력: {currentHealth}");
+
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
         {
