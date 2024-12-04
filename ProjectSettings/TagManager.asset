@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TargetCanvas
   - Enemy
+  - HUDPoint
   layers:
   - Default
   - TransparentFX
