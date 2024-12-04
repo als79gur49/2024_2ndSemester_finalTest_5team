@@ -8,11 +8,14 @@ public class UnitMove : MonoBehaviour
     private Transform target; // 공격할 적
     private bool isAttack = false;
 
+    public GameObject farmerPrefab;
+    public Animator anim;
 
-
+    private UnitUI unitUI;
     void Start()
     {
-
+        anim = GetComponent<Animator>();
+        unitUI = FindObjectOfType<UnitUI>(); // UnitUI 스크립트 찾기
     }
     // Update is called once per frame
     private void Update()
@@ -30,6 +33,7 @@ public class UnitMove : MonoBehaviour
         if (target == null)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            anim.SetBool("isAttack", false);
         }
     }
     // 충돌 유지
@@ -38,8 +42,8 @@ public class UnitMove : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             isAttack = true;
+            anim.SetBool("isAttack", true);
         }
-        
     }
 
     // 충돌이 벗어날 때
@@ -48,6 +52,7 @@ public class UnitMove : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             isAttack = false;
+            anim.SetBool("isAttack", false);
         }
     }
 }

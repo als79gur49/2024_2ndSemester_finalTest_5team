@@ -9,7 +9,7 @@ public class UnitUI : MonoBehaviour
 {
     [Header("게임오브젝트 프리팹")]
     [SerializeField]
-    private UnitStats unitObject;
+    public UnitStats unitObject;
     [SerializeField]
     private int spendGold;
 
@@ -41,6 +41,7 @@ public class UnitUI : MonoBehaviour
     private GoldSystem goldSystem;
     private UnitSpawn gameManager;
 
+    private UnitMove unitMove;
     private void Awake()
     {
         if(characterName != null)
@@ -60,6 +61,12 @@ public class UnitUI : MonoBehaviour
 
         goldSystem = FindObjectOfType<GoldSystem>();
         gameManager = FindAnyObjectByType<UnitSpawn>();
+
+        if (unitMove != null && unitMove.anim != null)
+        {
+            // 초기 애니메이션 상태를 UI에 반영
+            unitMove.anim.SetBool("isAttack", false); // 기본적으로 비활성화
+        }
     }
 
     public void Spawn()
@@ -79,7 +86,7 @@ public class UnitUI : MonoBehaviour
                     UnitStats clone = Instantiate(unitObject, gameManager.PlayerspawnPoint);
                     goldSystem.SpendGold(spendGold);
 
-                    if(targetCanvas != null && healthText != null)
+                    if (targetCanvas != null && healthText != null)
                     {
                         GameObject HPText = Instantiate(healthText);
                         HPText.transform.SetParent(targetCanvas.transform);
@@ -130,5 +137,13 @@ public class UnitUI : MonoBehaviour
         image.enabled = false;
     }
 
+    // UnitMove에서 애니메이션 상태를 UI에 반영하기
+    public void UpdateAttackState(bool isAttacking)
+    {
+        if (unitMove != null && unitMove.anim != null)
+        {
+            unitMove.anim.SetBool("isAttack", isAttacking); // 애니메이션 상태 변경
+        }
+    }
 }
 

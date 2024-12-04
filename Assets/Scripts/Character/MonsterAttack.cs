@@ -9,6 +9,7 @@ public class MonsterAttack : MonoBehaviour
     private float lastAttackTime = 0f; // 마지막 공격시간
     private Coroutine attackCoroutine;
     private bool isAttack = false; // 공격 여부
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class MonsterAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (!isAttack) // 공격중이 아니라면
+            if (!isAttack)
             {
                 isAttack = true;
                 if (attackCoroutine != null)

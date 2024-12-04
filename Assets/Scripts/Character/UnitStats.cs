@@ -37,6 +37,12 @@ public class UnitStats : MonoBehaviour
     public Transform HUDPoint;
     public UnityEvent<int, int> OnHealthChanged; // current, max
 
+    public Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
     void Start()
     {
         currentHealth = maxHealth; // 초기 체력을 최대 체력으로 설정
@@ -77,7 +83,6 @@ public class UnitStats : MonoBehaviour
         {
             FindObjectOfType<StageManager>()?.OnDefeatEvent.Invoke();
         }
-
         Destroy(gameObject);
     }
 }
