@@ -28,14 +28,26 @@ public class StageManager : MonoBehaviour
     public int AchievedStars => achievedStars;
     public string SceneName => sceneName;
 
+
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(0.1f);//가장 늦게 이벤트에 구독
 
-        this.OnWinEvent.AddListener(UpdateStageState);
+        this.OnWinEvent.AddListener(DeactiveTowerCollision);//타워 무적
+        this.OnWinEvent.AddListener(UpdateStageState);//스테이지 상태 체크
         this.OnWinEvent.AddListener(CallGameManager);
 
+        this.OnDefeatEvent.AddListener(DeactiveTowerCollision);
         this.OnDefeatEvent.AddListener(CallGameManager);
+    }
+
+
+    private void DeactiveTowerCollision() //게임 끝나고 타워 피격 없애기
+    {
+        if(playerTower?.TryGetComponent<BoxCollider2D>(out BoxCollider2D box) ?? false)
+        {
+            box.enabled = false;
+        }
     }
 
     private void UpdateStageState()
