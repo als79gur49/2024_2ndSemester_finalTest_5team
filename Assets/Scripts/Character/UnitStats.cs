@@ -95,6 +95,18 @@ public class UnitStats : MonoBehaviour
             if (anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
             {
                 anim.SetTrigger("isDie");
+                if (TryGetComponent<BoxCollider2D>(out BoxCollider2D box)) //엄연히 죽은 상태이지만, 삭제되기 전이라 충돌을 계속 진행 중
+                {
+                    box.enabled = false;
+                }
+                if(TryGetComponent<UnitMove>(out UnitMove movePlayer))
+                {
+                    movePlayer.IsAttack = false;
+                }
+                if(TryGetComponent<MonsterUnitMove>(out MonsterUnitMove moveMonster))
+                {
+                    moveMonster.IsAttack = false;
+                }
                 StartCoroutine(WaitForDieAnimation());
             }
         }
@@ -119,6 +131,7 @@ public class UnitStats : MonoBehaviour
     {
         // 애니메이션 상태 정보 얻기
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
 
         // "isDie" 애니메이션이 끝날 때까지 대기 (애니메이션 길이만큼 대기)
         yield return new WaitForSeconds(stateInfo.length);

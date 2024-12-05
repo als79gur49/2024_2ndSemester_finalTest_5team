@@ -7,7 +7,7 @@ public class UnitMove : MonoBehaviour
     public float moveSpeed = 1f; // 이동 속도
     private Transform target; // 공격할 적
     private bool isAttack = false;
-
+    public bool IsAttack { get; set; }
     Animator anim;
 
     void Start()
