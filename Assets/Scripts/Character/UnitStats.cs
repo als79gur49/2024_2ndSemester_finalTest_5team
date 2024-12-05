@@ -20,6 +20,7 @@ public class UnitStats : MonoBehaviour
     public int attackDamage; // 공격력
     public float attackCooldown; // 공격 쿨타임
     public float attackRange = 1.5f; // 공격 범위
+    private bool isDead = false;
 
     public int goldReward; // 적 유닛 처치 시 지급할 골드
     private GoldSystem goldSystem;
@@ -64,6 +65,9 @@ public class UnitStats : MonoBehaviour
     }
     private void Die()
     {
+        if (isDead) return; // 이미 죽었으면 리턴
+        isDead = true;
+
         if(CompareTag("Enemy"))
         {
             if (goldSystem != null)
@@ -73,6 +77,7 @@ public class UnitStats : MonoBehaviour
                 {
                     goldSystem.AddGold(goldReward);
                     Debug.Log($"{goldSystem.currentGold}");
+<<<<<<< Updated upstream
                     Destroy(gameObject);
                 }
             }
@@ -80,6 +85,24 @@ public class UnitStats : MonoBehaviour
         if (CompareTag("Player"))
         {
             Debug.Log("애니메이션 출력");
+=======
+                }
+                /*if (unitType == UnitType.Boss)
+                {
+                    if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+                    {
+                        Debug.Log("보스 몬스터 애니메이션 출력");
+                        anim.SetTrigger("isDie");
+                        StartCoroutine(WaitForDieAnimation());
+                        // 씬이동
+                    }
+                }*/
+            }
+        }
+
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+        {
+>>>>>>> Stashed changes
             anim.SetTrigger("isDie");
             StartCoroutine(WaitForDieAnimation());
         }
