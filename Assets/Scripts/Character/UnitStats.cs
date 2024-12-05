@@ -90,7 +90,7 @@ public class UnitStats : MonoBehaviour
                 }*/
             }
         }
-        if (CompareTag("Enemy"))
+        if(true)//if (CompareTag("Enemy"))
         {
             if (anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
             {
@@ -98,7 +98,8 @@ public class UnitStats : MonoBehaviour
                 StartCoroutine(WaitForDieAnimation());
             }
         }
-        if (unitType == UnitType.Boss && currentHealth <= 0)
+        if ((unitType == UnitType.Boss || unitType == UnitType.Monstermansion )&& 
+            currentHealth <= 0)
         {
             FindObjectOfType<StageManager>()?.OnWinEvent.Invoke();
         }

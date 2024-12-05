@@ -4412,6 +4412,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9204161130916239169, guid: 5b3a1347f76587e4eadb629eb1159bdc, type: 3}
   m_PrefabInstance: {fileID: 1360617803}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1360617805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8757415928978261436, guid: 5b3a1347f76587e4eadb629eb1159bdc, type: 3}
+  m_PrefabInstance: {fileID: 1360617803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9bb3fbdba904434489dc7ed062ca68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1377943621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5351,7 +5362,7 @@ MonoBehaviour:
   OnUpdateGold:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1360617805}
         m_TargetAssemblyTypeName: UpdateGold, Assembly-CSharp
         m_MethodName: UpdateGoldHUD
         m_Mode: 0

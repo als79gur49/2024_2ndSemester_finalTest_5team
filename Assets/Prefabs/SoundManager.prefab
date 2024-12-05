@@ -338,7 +338,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 23d58d86d2fcc4f4585ad92e1472ce5d, type: 3}
   effectClips:
   - name: Click
-    clip: {fileID: 8300000, guid: 3473da3f773f8b242af8d380318e8ed3, type: 3}
+    clip: {fileID: 8300000, guid: c3816b381be1f2a45942eaea40363d4f, type: 3}
   - name: BattleStart
     clip: {fileID: 8300000, guid: eade19d78c36bbb46a9a4ab9c051424d, type: 3}
   - name: PlayerUnitSpawn
