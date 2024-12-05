@@ -90,13 +90,14 @@ public class UnitStats : MonoBehaviour
                 }*/
             }
         }
-
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+        if (CompareTag("Enemy"))
         {
-            anim.SetTrigger("isDie");
-            StartCoroutine(WaitForDieAnimation());
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+            {
+                anim.SetTrigger("isDie");
+                StartCoroutine(WaitForDieAnimation());
+            }
         }
-
         if (unitType == UnitType.Boss && currentHealth <= 0)
         {
             FindObjectOfType<StageManager>()?.OnWinEvent.Invoke();

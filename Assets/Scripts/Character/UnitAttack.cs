@@ -21,6 +21,7 @@ public class UnitAttack : MonoBehaviour
             if (!isAttack)
             {
                 isAttack = true;
+                SoundManager.Instance.PlaySound(SoundManager.Sfx.HunterSound);
                 if (attackCoroutine != null)
                 {
                     StopCoroutine(attackCoroutine); // 기존의 공격 코루틴이 있다면 중지
