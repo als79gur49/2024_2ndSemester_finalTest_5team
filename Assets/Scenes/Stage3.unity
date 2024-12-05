@@ -1741,6 +1741,9 @@ MonoBehaviour:
   attackDamage: 0
   attackCooldown: 0
   attackRange: 1.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   goldReward: 0
   currentHealth: 0
   unitName: "\uAE30\uC9C0"
@@ -2080,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f8e6288f4de4a45bedfae118f416eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 100
+  currentGold: 300
   GainGold: 10
   OnUpdateGold:
     m_PersistentCalls:

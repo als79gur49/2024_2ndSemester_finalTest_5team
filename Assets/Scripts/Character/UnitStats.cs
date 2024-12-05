@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 public enum UnitType
@@ -19,7 +20,8 @@ public class UnitStats : MonoBehaviour
     public int maxHealth; // 최대 체력
     public int attackDamage; // 공격력
     public float attackCooldown; // 공격 쿨타임
-    public float attackRange = 1.5f; // 공격 범위
+    public float attackRange; // 공격 범위
+    public LayerMask enemyLayer;
     private bool isDead = false;
 
     public int goldReward; // 적 유닛 처치 시 지급할 골드
@@ -53,8 +55,8 @@ public class UnitStats : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        Debug.Log($"{gameObject.name} 체력: {currentHealth}");
+            currentHealth -= damage;
+            Debug.Log($"{gameObject.name} 체력: {currentHealth}");
 
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
@@ -90,7 +92,7 @@ public class UnitStats : MonoBehaviour
                 }*/
             }
         }
-        if(true)//if (CompareTag("Enemy"))
+        if(true)
         {
             if (anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
             {
@@ -125,5 +127,11 @@ public class UnitStats : MonoBehaviour
 
         // 애니메이션이 끝난 후 오브젝트 삭제
         Destroy(gameObject);
+    }
+
+    // 공격 범위를 변경하는 함수
+    public void SetAttackRange(float newRange)
+    {
+        attackRange = newRange;
     }
 }
