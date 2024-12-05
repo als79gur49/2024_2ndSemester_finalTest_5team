@@ -52,12 +52,14 @@ public class UnitMove : MonoBehaviour
         }
     }
 
+
     // 충돌이 벗어날 때
     private void OnTriggerExit2D(Collider2D collision)
     {
         isAttack = false;
         if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("OFF");
             anim.SetBool("isAttack", false);
         }
     }

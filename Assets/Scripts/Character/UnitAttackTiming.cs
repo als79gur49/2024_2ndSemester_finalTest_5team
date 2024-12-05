@@ -48,7 +48,16 @@ public class UnitAttackTiming : MonoBehaviour
 
     public void Attack()
     {
-        if(target == null) //타겟이 비어있으면, 예비타겟에서 가져오기
+        //타겟은 박스콜라이더 true인 놈만
+
+        //if(target !=null && targetON)
+        if (target?.GetComponent<BoxCollider2D>() ?? false)
+        { //적이 죽으면 collider를 끄고 animation을 하기에, collider 고려
+            target = targetLists.FirstOrDefault();
+        }
+
+
+        if (target == null) //타겟이 비어있으면, 예비타겟에서 가져오기
         {
             target = targetLists.FirstOrDefault();
         }
