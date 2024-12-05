@@ -498,8 +498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 19.2, y: 10.8}
+  m_AnchoredPosition: {x: -0.0039, y: 0}
+  m_SizeDelta: {x: 21.0938, y: 10.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &488031080
 PrefabInstance:
@@ -1765,6 +1765,9 @@ MonoBehaviour:
   attackDamage: 0
   attackCooldown: 0
   attackRange: 1.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   goldReward: 0
   currentHealth: 0
   unitName: "\uAE30\uC9C0"
@@ -2105,7 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f8e6288f4de4a45bedfae118f416eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 100
+  currentGold: 300
   GainGold: 10
   OnUpdateGold:
     m_PersistentCalls:

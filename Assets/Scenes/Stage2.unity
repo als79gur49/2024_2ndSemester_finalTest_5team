@@ -636,6 +636,9 @@ MonoBehaviour:
   attackDamage: 0
   attackCooldown: 0
   attackRange: 1.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   goldReward: 0
   currentHealth: 0
   unitName: "\uAE30\uC9C0"
@@ -929,6 +932,7 @@ MonoBehaviour:
   SpawnUnit: []
   MonsterUnit:
   - {fileID: 4871057617929954885, guid: c79aea93d6f0b46418cf9132ce1679ec, type: 3}
+  - {fileID: 2775250315426912360, guid: bd1cf42a6f441b84cbcbb50de3e50cf1, type: 3}
   PlayerspawnPoint: {fileID: 2011960145}
   MonsterspawnPoint: {fileID: 1193101634}
   spawnDelay: 5
@@ -944,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f8e6288f4de4a45bedfae118f416eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 100
+  currentGold: 200
   GainGold: 10
   OnUpdateGold:
     m_PersistentCalls:
@@ -1502,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit
       objectReference: {fileID: 0}
+    - target: {fileID: 3451407170234663504, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6212333396177268098, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
       propertyPath: spendGold
       value: 80
@@ -1606,6 +1614,10 @@ PrefabInstance:
     - target: {fileID: 1453471661282159236, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
       propertyPath: m_Name
       value: Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451407170234663504, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6212333396177268098, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
       propertyPath: spendGold
@@ -2343,8 +2355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 19.2, y: 10.8}
+  m_AnchoredPosition: {x: -0.0017, y: -0.0032}
+  m_SizeDelta: {x: 21.0922, y: 10.8064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1977072968
 PrefabInstance:
@@ -3050,6 +3062,10 @@ PrefabInstance:
     - target: {fileID: 1453471661282159236, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
       propertyPath: m_Name
       value: Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451407170234663504, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8039440283900118148, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
       propertyPath: m_Pivot.x
