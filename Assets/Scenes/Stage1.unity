@@ -5952,6 +5952,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2166948191847749471, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533253718775966993, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533253718775966993, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533253718775966993, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451407170234663504, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5990838986319799314, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8039440283900118148, guid: ccf9929863168144fb89a87db4150d5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

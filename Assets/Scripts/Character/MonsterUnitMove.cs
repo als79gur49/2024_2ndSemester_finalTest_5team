@@ -40,9 +40,10 @@ public class MonsterUnitMove : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isAttack = true;
+        //isAttack = true;
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("AttOn");
             isAttack = true;
             if (!isAttack)
             {

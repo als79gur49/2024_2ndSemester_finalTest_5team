@@ -92,7 +92,7 @@ public class UnitStats : MonoBehaviour
         }
         if (CompareTag("Enemy"))
         {
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
+            if (anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName("isDie"))
             {
                 anim.SetTrigger("isDie");
                 StartCoroutine(WaitForDieAnimation());
@@ -107,6 +107,12 @@ public class UnitStats : MonoBehaviour
         {
             FindObjectOfType<StageManager>()?.OnDefeatEvent.Invoke();
         }
+
+        if (unitType == UnitType.Monstermansion || unitType == UnitType.Monstercastlegate)
+        {
+            Destroy(gameObject);
+        }
+
     }
     private IEnumerator WaitForDieAnimation()
     {
