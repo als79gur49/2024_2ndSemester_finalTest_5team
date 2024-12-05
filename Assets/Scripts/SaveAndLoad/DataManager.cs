@@ -92,7 +92,7 @@ public class DataManager : MonoBehaviour
             int stageLevel = int.Parse(match.Groups[2].Value); // 숫자부분을 int로 변경
 
             //클리어한 스테이지 변경
-            if (stageLevel > PlayerData.stageLevel)
+            if (stageLevel >= PlayerData.stageLevel)
             {
                 Debug.Log($"클리어한 최대 스테이지를 {PlayerData.stageLevel} -> {stageLevel}로 변경");
                 PlayerData.stageLevel = stageLevel;
@@ -103,6 +103,15 @@ public class DataManager : MonoBehaviour
             PlayerData.stageInfos[stageLevel].stageClearState = StageClearState.Cleard;
             Debug.Log($"{PlayerData.stageInfos[stageLevel].achievedStars} -> {stageManager.AchievedStars}로 별 개수 변경");
             PlayerData.stageInfos[stageLevel].achievedStars = stageManager.AchievedStars;
+
+            for(int i = 1; i <= PlayerData.stageLevel; i++)
+            {
+                PlayerData.stageInfos[i].stageClearState = StageClearState.Cleard;
+            }
+            if(PlayerData.stageLevel+ 1 <= PlayerData.maxStageLevel)
+            {
+                PlayerData.stageInfos[PlayerData.stageLevel + 1].stageClearState = StageClearState.InProgress;
+            }
         }
     }
 }
