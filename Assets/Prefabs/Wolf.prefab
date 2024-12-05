@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5300978578541671276}
   - component: {fileID: 8922946172326714137}
   - component: {fileID: 7767774902410665723}
+  - component: {fileID: 4093905221750648126}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Enemy
@@ -162,6 +163,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+--- !u!210 &4093905221750648126
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487822545764609305}
+  m_Enabled: 1
+  m_SortingLayerID: -209214989
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &6410853944496390355
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5068615907628416331}
   - component: {fileID: 4509670530987204351}
   - component: {fileID: -5333861313916916247}
+  - component: {fileID: 280120833294275279}
   m_Layer: 0
   m_Name: KingMonster
   m_TagString: Enemy
@@ -148,6 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2da24abfac41384db89b51d9b184d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &280120833294275279
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698258066105392177}
+  m_Enabled: 1
+  m_SortingLayerID: -209214989
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &4813800537555757916
 PrefabInstance:
   m_ObjectHideFlags: 0
