@@ -55,6 +55,9 @@ MonoBehaviour:
   attackDamage: 5
   attackCooldown: 1
   attackRange: 1.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   goldReward: 0
   currentHealth: 0
   unitName: "\uB18D\uBD80"
