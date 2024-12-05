@@ -7,7 +7,7 @@ public class UnitMove : MonoBehaviour
     public float moveSpeed = 1f; // 이동 속도
     private Transform target; // 공격할 적
     private bool isAttack = false;
-
+    public bool IsAttack { get; set; }
     Animator anim;
 
     void Start()
@@ -52,12 +52,14 @@ public class UnitMove : MonoBehaviour
         }
     }
 
+
     // 충돌이 벗어날 때
     private void OnTriggerExit2D(Collider2D collision)
     {
         isAttack = false;
         if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("OFF");
             anim.SetBool("isAttack", false);
         }
     }

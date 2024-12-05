@@ -243,6 +243,16 @@ public class SoundManager : MonoBehaviour
         effectPlayer.GetComponent<AudioSource>().volume = value;
     }
 
+    public void ToggldBGMSound1()
+    {
+        bgmPlayer.GetComponent<AudioSource>().volume = bgmPlayer.GetComponent<AudioSource>().volume == 0 ? 1 : 0;
+    }
+    public void ToggldEffectSound1()
+    {
+        effectPlayer.GetComponent<AudioSource>().volume = effectPlayer.GetComponent<AudioSource>().volume == 0 ? 1 : 0;
+    }
+
+
     public void PlaySound(Sfx sfx)
     {
         for (int index = 0; index < sfxPlayers.Length; index++)

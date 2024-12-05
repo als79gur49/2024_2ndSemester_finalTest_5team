@@ -16,6 +16,7 @@ public class StarsController : MonoBehaviour
 
     private void Awake()
     {
+        isActivated = true;
         Init(isActivated, achievedStars);
     }
     private void Update()

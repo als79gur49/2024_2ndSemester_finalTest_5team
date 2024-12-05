@@ -1377,7 +1377,7 @@ PrefabInstance:
     - target: {fileID: 2616053739694676987, guid: 63dfa89b2d7868d46a207adc7db875bd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 064e89f48532c074e8cb0174d1afe7ce, type: 3}
+      objectReference: {fileID: -528075342, guid: 064e89f48532c074e8cb0174d1afe7ce, type: 3}
     - target: {fileID: 9027690943617070621, guid: 63dfa89b2d7868d46a207adc7db875bd, type: 3}
       propertyPath: m_Name
       value: PanelImage

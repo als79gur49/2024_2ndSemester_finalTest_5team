@@ -301,6 +301,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 18cae3676e769404fab57df68127c1d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 288990705279227207}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 18cae3676e769404fab57df68127c1d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3325396049154982193}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 18cae3676e769404fab57df68127c1d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3124180131895598930}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 18cae3676e769404fab57df68127c1d6, type: 3}
 --- !u!4 &7766574426425588771 stripped
 Transform:
@@ -345,3 +351,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5a23e4e68d94b4fa94d4c8ca6cee33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &3325396049154982193
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863211190788138048}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 8}
+  m_EdgeRadius: 0
+--- !u!114 &3124180131895598930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863211190788138048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395692217dd49174a859c7fe5b606f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
