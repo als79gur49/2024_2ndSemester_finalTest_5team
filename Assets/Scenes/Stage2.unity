@@ -893,6 +893,7 @@ GameObject:
   - component: {fileID: 462674782}
   - component: {fileID: 462674781}
   - component: {fileID: 462674780}
+  - component: {fileID: 462674783}
   - component: {fileID: 462674779}
   m_Layer: 0
   m_Name: GameManager
@@ -975,6 +976,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462674783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462674778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53714a2ef0d583a4aae3bc8de9cfe215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnUnit: []
+  MonsterUnit:
+  - {fileID: 2775250315426912360, guid: bd1cf42a6f441b84cbcbb50de3e50cf1, type: 3}
+  PlayerspawnPoint: {fileID: 2011960145}
+  MonsterspawnPoint: {fileID: 1193101634}
+  spawnDelay: 6
 --- !u!114 &714202587 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3561990525883107494, guid: afe90acc7df0967459ef80e42c492d8b, type: 3}
@@ -1424,6 +1443,11 @@ PrefabInstance:
 --- !u!224 &1029594906 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8195409009691719193, guid: 4b240e4fbf94364479add2caf50d8328, type: 3}
+  m_PrefabInstance: {fileID: 1029594905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1029594907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5631091420999284375, guid: 4b240e4fbf94364479add2caf50d8328, type: 3}
   m_PrefabInstance: {fileID: 1029594905}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1065033766
@@ -2162,8 +2186,8 @@ MonoBehaviour:
   OnDefeatEvent:
     m_PersistentCalls:
       m_Calls: []
-  victoryPanel: {fileID: 0}
-  defeatedPanel: {fileID: 0}
+  victoryPanel: {fileID: 1977072970}
+  defeatedPanel: {fileID: 1029594907}
   playerTower: {fileID: 132230179}
 --- !u!4 &1830920672
 Transform:
@@ -2458,6 +2482,11 @@ PrefabInstance:
 --- !u!224 &1977072969 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6764130547485981052, guid: 56411e410bc03f649a2042c12af17182, type: 3}
+  m_PrefabInstance: {fileID: 1977072968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977072970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1404598223239322016, guid: 56411e410bc03f649a2042c12af17182, type: 3}
   m_PrefabInstance: {fileID: 1977072968}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1982986077 stripped

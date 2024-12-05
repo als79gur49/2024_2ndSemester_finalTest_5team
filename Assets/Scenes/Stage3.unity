@@ -1381,6 +1381,14 @@ PrefabInstance:
       value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4651294120600281573, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651294120600281573, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651294120600281573, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.75
       objectReference: {fileID: 0}
@@ -1423,6 +1431,22 @@ PrefabInstance:
     - target: {fileID: 5906215576624891973, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742306587676491436, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742306587676491436, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742306587676491436, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742306587676491436, guid: 7fcc1a56b9e659f41bf372f7f178b191, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2030,6 +2054,7 @@ GameObject:
   - component: {fileID: 1825123713}
   - component: {fileID: 1825123712}
   - component: {fileID: 1825123711}
+  - component: {fileID: 1825123714}
   - component: {fileID: 1825123710}
   m_Layer: 0
   m_Name: GameManager
@@ -2067,7 +2092,7 @@ MonoBehaviour:
   - {fileID: 4871057617929954885, guid: c79aea93d6f0b46418cf9132ce1679ec, type: 3}
   PlayerspawnPoint: {fileID: 1210774113}
   MonsterspawnPoint: {fileID: 1729793538}
-  spawnDelay: 5
+  spawnDelay: 4
 --- !u!114 &1825123712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2112,6 +2137,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1825123714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825123709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53714a2ef0d583a4aae3bc8de9cfe215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnUnit: []
+  MonsterUnit:
+  - {fileID: 2775250315426912360, guid: bd1cf42a6f441b84cbcbb50de3e50cf1, type: 3}
+  PlayerspawnPoint: {fileID: 1210774113}
+  MonsterspawnPoint: {fileID: 1729793538}
+  spawnDelay: 5
 --- !u!1001 &1884642589
 PrefabInstance:
   m_ObjectHideFlags: 0

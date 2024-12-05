@@ -158,8 +158,8 @@ MonoBehaviour:
   OnDefeatEvent:
     m_PersistentCalls:
       m_Calls: []
-  victoryPanel: {fileID: 0}
-  defeatedPanel: {fileID: 0}
+  victoryPanel: {fileID: 547337678}
+  defeatedPanel: {fileID: 403972986}
   playerTower: {fileID: 756888088}
 --- !u!4 &501353
 Transform:
@@ -841,6 +841,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8195409009691719193, guid: 4b240e4fbf94364479add2caf50d8328, type: 3}
   m_PrefabInstance: {fileID: 403972984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &403972986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5631091420999284375, guid: 4b240e4fbf94364479add2caf50d8328, type: 3}
+  m_PrefabInstance: {fileID: 403972984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &448579870 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3457269214329366020, guid: 6e24171589fd00b44a7c73af152e0ea3, type: 3}
@@ -1022,6 +1027,11 @@ PrefabInstance:
 --- !u!224 &547337677 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6764130547485981052, guid: 56411e410bc03f649a2042c12af17182, type: 3}
+  m_PrefabInstance: {fileID: 547337676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &547337678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1404598223239322016, guid: 56411e410bc03f649a2042c12af17182, type: 3}
   m_PrefabInstance: {fileID: 547337676}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &756888085
