@@ -123,6 +123,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &501351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501353}
+  - component: {fileID: 501352}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &501352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65597a95870acd42b600af8a8bf0e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnWinEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDefeatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  victoryPanel: {fileID: 1755745409}
+  defeatedPanel: {fileID: 253860790856241979}
+  playerTower: {fileID: 756888088}
+--- !u!4 &501353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 173.25, y: 502.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &11301381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6610,6 +6663,7 @@ SceneRoots:
   - {fileID: 1000228145}
   - {fileID: 239838566}
   - {fileID: 3263072972632319230}
+  - {fileID: 501353}
   - {fileID: 786028822}
   - {fileID: 1655651312}
   - {fileID: 1334797259}
