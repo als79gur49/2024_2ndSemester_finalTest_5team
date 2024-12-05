@@ -2199,6 +2199,7 @@ MonoBehaviour:
   SpawnUnit: []
   MonsterUnit:
   - {fileID: 4871057617929954885, guid: c79aea93d6f0b46418cf9132ce1679ec, type: 3}
+  - {fileID: 2775250315426912360, guid: bd1cf42a6f441b84cbcbb50de3e50cf1, type: 3}
   PlayerspawnPoint: {fileID: 2011960145}
   MonsterspawnPoint: {fileID: 1193101634}
   spawnDelay: 5
@@ -5191,8 +5192,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 19.2, y: 10.8}
+  m_AnchoredPosition: {x: -0.0017, y: -0.0032}
+  m_SizeDelta: {x: 21.0922, y: 10.8064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1939702262
 GameObject:
