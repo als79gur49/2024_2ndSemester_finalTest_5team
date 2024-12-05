@@ -343,6 +343,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eade19d78c36bbb46a9a4ab9c051424d, type: 3}
   - name: PlayerUnitSpawn
     clip: {fileID: 8300000, guid: 37357d9fce0757c4a8611085dd1ec8ec, type: 3}
+  - name: RangeAttack
+    clip: {fileID: 8300000, guid: 077a06ac79bf7624196865b609869a5a, type: 3}
+  - name: MeleeAttack
+    clip: {fileID: 8300000, guid: 8adf9ea951275f9419eab2badfef2392, type: 3}
   sfxClips: []
   sfxVolume: 0
   channels: 0
