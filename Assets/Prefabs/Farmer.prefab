@@ -78,8 +78,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  farmerPrefab: {fileID: 1695033054197136513}
-  anim: {fileID: 0}
 --- !u!50 &887645700107324011
 Rigidbody2D:
   serializedVersion: 4
@@ -172,9 +170,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4055637705992891390}
     m_Modifications:
+    - target: {fileID: -8914589695254545364, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8914589695254545364, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
+      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
       propertyPath: m_Name
       value: pigfarmer
+      objectReference: {fileID: 0}
+    - target: {fileID: -7853792998962530180, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7853792998962530180, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
       propertyPath: m_LocalScale.x
@@ -223,6 +237,46 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7509425852276852608, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7509425852276852608, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
+      objectReference: {fileID: 0}
+    - target: {fileID: -5342990367754708293, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5342990367754708293, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
+      objectReference: {fileID: 0}
+    - target: {fileID: 354442484431237664, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 354442484431237664, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756571697180065887, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756571697180065887, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136709959996778825, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136709959996778825, guid: 577db82d44398054da6ed10d50f510a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1571166101
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

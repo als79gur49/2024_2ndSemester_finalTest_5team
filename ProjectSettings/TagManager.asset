@@ -44,3 +44,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: New Layer 1
+    uniqueID: 442314547
+    locked: 0
+  - name: Background
+    uniqueID: 2261235687
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 226319559
+    locked: 0
+  - name: Building
+    uniqueID: 4085752307
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 127584851
+    locked: 0
+  - name: EnemyUnit
+    uniqueID: 2799204931
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 1126653411
+    locked: 0
+  - name: PlayerUnit
+    uniqueID: 1571166101
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 3698429313
+    locked: 0
+  - name: New Layer 10
+    uniqueID: 1517034405
+    locked: 0
+  - name: New Layer 11
+    uniqueID: 1459052291
+    locked: 0

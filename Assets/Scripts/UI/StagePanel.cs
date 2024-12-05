@@ -40,13 +40,13 @@ public class StagePanel : MonoBehaviour
                 break;
             case StageClearState.InProgress:
                 starController.Init(true, currentStageInfo.achievedStars);
-                stageName.text = currentStageInfo.stageName;
-
+                //stageName.text = currentStageInfo.stageName;
+                stageName.text = " ";
                 break;
             case StageClearState.Cleard:
                 starController.Init(true, currentStageInfo.achievedStars);
-                stageName.text = currentStageInfo.stageName;
-
+                //stageName.text = currentStageInfo.stageName;
+                stageName.text = " ";
                 break;
         } 
     }
