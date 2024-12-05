@@ -58,7 +58,7 @@ MonoBehaviour:
   goldReward: 0
   currentHealth: 0
   unitName: "\uB18D\uBD80"
-  unitImage: {fileID: 21300000, guid: 9245b3f4248443d44b36f2a99ec2e922, type: 3}
+  unitImage: {fileID: 21300000, guid: de5377e2d31c33841acb95af5844106c, type: 3}
   unitCooldown: 8
   stageClearPanel: {fileID: 0}
   HUDPoint: {fileID: 0}
