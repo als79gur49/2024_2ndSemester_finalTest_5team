@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitType: 1
-  maxHealth: 111
-  attackDamage: 555
+  maxHealth: 10
+  attackDamage: 5
   attackCooldown: 1
   attackRange: 1.5
   goldReward: 0
