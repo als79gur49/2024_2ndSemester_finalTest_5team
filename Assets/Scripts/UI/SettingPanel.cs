@@ -5,18 +5,17 @@ using UnityEngine.UI;
 public class SettingPanel : MonoBehaviour
 {
     [SerializeField]
-    private Slider BGMSlider;
+    private ButtonSlider bgmButton;
     [SerializeField]
-    private Slider effectSlider;
-
+    private ButtonSlider effectButton;
     private void Awake()
     {
-        //슬라이더 함수 연결
-        BGMSlider.onValueChanged.AddListener(SoundManager.Instance.ToggleBGMSound);
-        effectSlider.onValueChanged.AddListener(SoundManager.Instance.ToggleEffectSound);
+        bgmButton.state = (int)SoundManager.Instance.BGMPlayer.GetComponent<AudioSource>().volume;
+       effectButton.state = (int)SoundManager.Instance.EffectPlayer.GetComponent<AudioSource>().volume;
 
-        //슬라이더 값을 저장된 값으로 초기화
-        BGMSlider.value = SoundManager.Instance.BGMPlayer.GetComponent<AudioSource>().volume;
-        effectSlider.value = SoundManager.Instance.EffectPlayer.GetComponent<AudioSource>().volume;
+        bgmButton.GetComponent<Button>().onClick.AddListener(SoundManager.Instance.ToggldBGMSound1);
+        effectButton.GetComponent<Button>().onClick.AddListener(SoundManager.Instance.ToggldEffectSound1);
+
     }
+
 }

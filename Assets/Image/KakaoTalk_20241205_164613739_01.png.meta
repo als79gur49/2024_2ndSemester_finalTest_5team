@@ -144,8 +144,8 @@ TextureImporter:
         width: 410
         height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 25, y: 0, z: 42, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -160,12 +160,12 @@ TextureImporter:
       name: KakaoTalk_20241205_164613739_01_1
       rect:
         serializedVersion: 2
-        x: 59
+        x: 33
         y: 187
-        width: 343
+        width: 410
         height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,8 +186,8 @@ TextureImporter:
         width: 426
         height: 132
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 38, y: 0, z: 58, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
